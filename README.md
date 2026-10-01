@@ -6,6 +6,10 @@ This repository contains all lab assignments and corresponding PDF outputs for t
 
 My name is Gabriel Martinez, a Software Engineer at NIWC Pacific focused on researching and developing real-time signal assurance software for common data links using software defined radios (SDRs). I hold a B.S. in Computer Science with a minor in Physics and an M.S. in Applied Mathematics from Cal Poly Pomona.
 
+## Main Resource
+
+https://pp4fpgas.readthedocs.io/
+
 ## Weekly Assignments
 
 | Lab Reports | Assignments|
