@@ -1,31 +1,55 @@
 # ==========================================
-# All project# directories and subdirectories
+# HLS generated directories
+# Applies to all project subdirectories
 # ==========================================
 
-# Generated HLS projects
-/project[0-9]*/**/*_prj/
-/project[0-9]*/**/solution*/
-/project[0-9]*/**/.autopilot/
-/project[0-9]*/**/*.autopilot/
+**/*.comp/
+**/*.autopilot/
+**/*_prj/
+**/solution*/
+**/csim/
+**/sim/
+**/xsim.dir/
+**/.Xil/
 
-# HLS simulation
-/project[0-9]*/**/csim/
-/project[0-9]*/**/sim/
-/project[0-9]*/**/xsim.dir/
+# ==========================================
+# HLS generated files
+# ==========================================
 
-# Generated binaries
-/project[0-9]*/**/*.o
-/project[0-9]*/**/*.exe
-/project[0-9]*/**/*.out
+**/fir.tcl
+**/*.hlscompile_summary
+**/*.protoinst
+**/hls.aps
+**/hls.directive
+**/hls_data.json
+**/vitis-comp.json
+**/hls_config.cfg
 
-# Generated logs
-/project[0-9]*/**/*.log
-/project[0-9]*/**/*.jou
+# ==========================================
+# Build artifacts
+# ==========================================
 
-# Waveforms
-/project[0-9]*/**/*.vcd
-/project[0-9]*/**/*.wdb
+**/*.o
+**/*.so
+**/*.so.*
+**/*.a
+**/*.exe
+**/*.out
+**/*.dat
 
+# ==========================================
+# Logs and reports
+# ==========================================
+
+**/*.log
+**/*.jou
+**/*.str
+**/*.rpt
+
+# ==========================================
 # Temporary files
-/project[0-9]*/**/*.tmp
-/project[0-9]*/**/*.swp
+# ==========================================
+
+**/*.tmp
+**/*.swp
+**/.DS_Store
