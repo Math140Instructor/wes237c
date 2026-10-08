@@ -18,6 +18,11 @@ Append to .bashrc (maybe have to chmod +w ~/.bashrc)
 module load xilinx-vitis
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/xlnx_compat_fix
 
+## Makefile
+make test
+make hls
+make report
+
 ## Weekly Assignments
 
 | Lab Reports | Assignments|
