@@ -1,0 +1,31 @@
+# ==========================================
+# All project# directories and subdirectories
+# ==========================================
+
+# Generated HLS projects
+/project[0-9]*/**/*_prj/
+/project[0-9]*/**/solution*/
+/project[0-9]*/**/.autopilot/
+/project[0-9]*/**/*.autopilot/
+
+# HLS simulation
+/project[0-9]*/**/csim/
+/project[0-9]*/**/sim/
+/project[0-9]*/**/xsim.dir/
+
+# Generated binaries
+/project[0-9]*/**/*.o
+/project[0-9]*/**/*.exe
+/project[0-9]*/**/*.out
+
+# Generated logs
+/project[0-9]*/**/*.log
+/project[0-9]*/**/*.jou
+
+# Waveforms
+/project[0-9]*/**/*.vcd
+/project[0-9]*/**/*.wdb
+
+# Temporary files
+/project[0-9]*/**/*.tmp
+/project[0-9]*/**/*.swp
