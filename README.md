@@ -10,6 +10,14 @@ My name is Gabriel Martinez, a Software Engineer at NIWC Pacific focused on rese
 
 https://pp4fpgas.readthedocs.io/
 
+## Run once (from home directory)
+mkdir xlnx_compat_fix
+ln -s /usr/lib/x86_64-linux-gnu/libtinfo.so.6 ~/xlnx_compat_fix/libtinfo.so.5
+
+Append to .bashrc (maybe have to chmod +w ~/.bashrc)
+module load xilinx-vitis
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/xlnx_compat_fix
+
 ## Weekly Assignments
 
 | Lab Reports | Assignments|
