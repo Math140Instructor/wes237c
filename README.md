@@ -23,6 +23,9 @@ make test
 make hls
 make report
 
+## Test outputs
+diff -wB <(cat out.dat; echo) <(cat out.gold.dat; echo)
+
 ## Weekly Assignments
 
 | Lab Reports | Assignments|
