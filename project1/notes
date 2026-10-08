@@ -1,0 +1,10 @@
+
+For
+instance, symmetric  lters have multiple taps with exactly the same value which can be grouped to
+reduce the number of multiplications.
+
+
+However, as we saw with the moving average  lter, the structure of the  lter, or the particularcoe cients can have a large impact on the number of operations that need to be performed. Forinstance, symmetric  lters have multiple taps with exactly the same value which can be grouped toreduce the number of multiplications. In other cases, it is possible to convert the multiplication bya known constant  lter coe cient into shift and add operations [35]. In that case, the values of thecoe cients can drastically change the performance and area of the  lter implementation [53]. Butwe will ignore that for the time being, and focus on generating architectures that have constantcoe cients, but do not take advantage of the values of the constants.
+
+
+There are two separate classes for unsigned and signed data types:• Unsigned: ap uint<width>• Signed: ap int<width>where the width variable is an integer between 1 and 10241. For example, ap int<8> is an 8 bitsigned value (same as char), and ap uint<32> is a 32 bit unsigned value (same as unsigned int).This provides a more powerful data type since it can do any bitwidth, e.g., ap uint<4> orap int<537>. To use these data types you must use C++ and include the  le ap int.h, i.e., addthe code #include "ap int.h" in your project and use a  lename ending in `.cpp'2.
