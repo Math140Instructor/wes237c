@@ -25,25 +25,22 @@ void fir(data_t *y, data_t x) {
 // Shift previous samples.
 Shift_Loop:
   for (int i = N - 1; i > 0; i--) {
+#pragma HLS PIPELINE II = 1
     shift_reg[i] = shift_reg[i - 1];
   }
 
   // Insert newest sample.
   shift_reg[0] = x;
 
-// First 64 taps.
-Accum_Low:
-  for (int i = 0; i < 64; i++) {
+// Partitioned accumulation: two independent MAC operations.
+Accum_Partitioned:
+  for (int i = 0; i < N / 2; i++) {
+#pragma HLS PIPELINE II = 1
+
     sum_low += shift_reg[i] * c[i];
+    sum_high += shift_reg[i + N / 2] * c[i + N / 2];
   }
 
-// Last 64 taps.
-Accum_High:
-  for (int i = 64; i < N; i++) {
-    sum_high += shift_reg[i] * c[i];
-  }
-
-  // Combine partial sums and write output.
+  // Combine partial sums.
   acc_t acc = sum_low + sum_high;
   *y = (data_t)acc;
-}
