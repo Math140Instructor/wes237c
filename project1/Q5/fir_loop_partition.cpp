@@ -44,3 +44,4 @@ Accum_Partitioned:
   // Combine partial sums.
   acc_t acc = sum_low + sum_high;
   *y = (data_t)acc;
+}
