@@ -1,6 +1,9 @@
 # This makefile was tested with Vivado HLS 2019.2
 # and Vitis v2024.1
+# 
+#
 
+# select the HLS compiler to use (vivado_hls or vitis)
 TOP = fir
 SRC ?= $(TOP).cpp
 SRC_NAME = $(basename $(notdir $(SRC)))
@@ -50,14 +53,17 @@ HLS_CONFIG_FILE = $(CURDIR)/__hls_config__.ini
 
 
 # Testbench files
-EXAMPLES_CPP = $(shell ls *_test.cpp)
+EXAMPLES_CPP = $(wildcard *_test.cpp)
 EXAMPLES_BIN = $(patsubst %.cpp,%.bin,$(EXAMPLES_CPP))
-EXAMPLES_LOG = $(patsubst %.cpp,%.log,$(EXAMPLES_CPP))
 
 
 # HLS targets
-CXX_HLS_TARGET_FILES = $(SRC)
-HLS_TARGETS = $(patsubst %.cpp,%.comp,$(CXX_HLS_TARGET_FILES))
+HLS_TARGET = $(SRC_NAME).comp
+HLS_TCL = $(SRC_NAME).tcl
+
+
+# Default target
+.DEFAULT_GOAL := test
 
 
 # Compile object files
@@ -65,7 +71,7 @@ HLS_TARGETS = $(patsubst %.cpp,%.comp,$(CXX_HLS_TARGET_FILES))
 	$(CXX) -I$(VHLS)/include -c $< -o $@
 
 
-# Force test recompilation when switching SRC
+# Force recompilation when changing SRC
 .PHONY: FORCE
 FORCE:
 
@@ -75,40 +81,40 @@ FORCE:
 	LD_LIBRARY_PATH=$(LD_LIBRARY_PATH) $(CXX) -I$(VHLS)/include $(filter %.cpp,$^) -g -o $@
 
 
-# Generate HLS TCL script
-%.tcl: %.cpp
-	$(GEN_TCL) -c $(HLS_CONFIG_FILE) -i $< -o $@
+# Run testbench
+.PHONY: test
+test: $(EXAMPLES_BIN)
+	@set -e; for bin in $(EXAMPLES_BIN); do \
+		echo "Running $$bin with $(SRC)"; \
+		LD_LIBRARY_PATH=$(LD_LIBRARY_PATH) ./$$bin > $${bin%.bin}.log 2>&1; \
+	done
+
+
+# Generate Tcl script for selected source
+# Keep the HLS top-level function fixed as fir.
+$(HLS_TCL): $(SRC) $(HLS_CONFIG_FILE)
+	$(GEN_TCL) -c $(HLS_CONFIG_FILE) -i $(SRC) -o $@
+	sed -i 's/^[[:space:]]*set_top[[:space:]].*/set_top $(TOP)/' $@
 
 
 # Run HLS synthesis
-%.comp: %.tcl
-	$(HLS_COMPILER) $< || { s=$$?; echo "$(HLS_COMPILER) $< failed $$s" >&2; exit $$s; }
-
-
-# Execute testbench and save log
-%.log: %.bin
-	./$< > $@ 2>&1 || { s=$$?; echo "./$< > $@ failed $$s" >&2; exit $$s; }
-
-
-# HLS target
-hls: $(HLS_TARGETS)
-
-
-# Test target
-test: $(EXAMPLES_LOG)
+# Phony target ensures synthesis runs when requested.
+.PHONY: hls
+hls: $(HLS_TCL)
+	$(HLS_COMPILER) $(HLS_TCL)
 
 
 # Copy synthesis report using selected source name
+.PHONY: report
 report: hls
 	cp -f $(SRC_NAME).comp/hls/syn/report/$(TOP)_csynth.rpt $(SRC_NAME)_csynth.rpt
 
 
 # Clean generated files
+.PHONY: clean
 clean:
 	rm -rf *.o *.log *.bin *.tcl *.comp *.rpt logs hls out.dat
 
 
-.PHONY: clean hls test report
-
-# Prevent make from deleting intermediate files
+# Prevent deletion of intermediate files
 .PRECIOUS: %.bin %.tcl
