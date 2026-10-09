@@ -1,3 +1,4 @@
+## Original conditionals with pipelining
 LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu::/home/linux/ieng6/students/519/gam009/xlnx_compat_fix:/home/linux/ieng6/students/519/gam009/xlnx_compat_fix g++ -I/software/common/Xilinx_Vitis/Vitis_HLS/2024.2/bin/../../../Vitis/2024.2/include fir_test.cpp fir_orig.cpp -g -o fir_test.bin
 Running fir_test.bin with fir_orig.cpp
 /home/linux/ieng6/students/519/gam009/wes237c/project1/Q4/../../scripts/gen_hls_runner_script.py -c /home/linux/ieng6/students/519/gam009/wes237c/project1/Q4/__hls_config__.ini -i fir_orig.cpp -o fir_orig.tcl
