@@ -18,23 +18,32 @@ void fir(data_t *y, data_t x) {
 
   // Write your code here
   static data_t shift_reg[N];
-  acc_t acc;
-  int i;
 
-  acc = 0;
-  // Compute two independent partial sums.
-  int sum_low = 0;
-  int sum_high = 0;
+  acc_t sum_low = 0;
+  acc_t sum_high = 0;
 
+// Shift previous samples.
+Shift_Loop:
+  for (int i = N - 1; i > 0; i--) {
+    shift_reg[i] = shift_reg[i - 1];
+  }
+
+  // Insert newest sample.
+  shift_reg[0] = x;
+
+// First 64 taps.
 Accum_Low:
   for (int i = 0; i < 64; i++) {
     sum_low += shift_reg[i] * c[i];
   }
 
+// Last 64 taps.
 Accum_High:
-  for (int i = 64; i < 128; i++) {
+  for (int i = 64; i < N; i++) {
     sum_high += shift_reg[i] * c[i];
   }
 
-  acc = sum_low + sum_high;
+  // Combine partial sums and write output.
+  acc_t acc = sum_low + sum_high;
+  *y = (data_t)acc;
 }
