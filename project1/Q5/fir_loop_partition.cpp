@@ -23,7 +23,7 @@ void fir(data_t *y, data_t x) {
 // Partition 1: Process taps 127 down to 64.
 Upper_Half:
   for (int i = N - 1; i >= N / 2; i--) {
-#pragma HLS PIPELINE II = 8
+#pragma HLS PIPELINE II = 1
 
     data_t sample = shift_reg[i - 1];
 
@@ -34,7 +34,7 @@ Upper_Half:
 // Partition 2: Process taps 63 down to 0.
 Lower_Half:
   for (int i = N / 2 - 1; i >= 0; i--) {
-#pragma HLS PIPELINE II = 8
+#pragma HLS PIPELINE II = 1
 
     data_t sample;
 
