@@ -15,16 +15,25 @@
 void fir(data_t *y, data_t x) {
 
   coef_t c[N] = {10, 11, 11, 8, 3, -3, -8, -11, -11, -10, -10, -10, -10, -10, -10, -10, -10, -10, -10, -10, -10, -10, -10, -10, -10, -10, -10, -10, -10, -10, -10, -10, -10, -11, -11, -8, -3, 3, 8, 11, 11, 10, 10, 10, 10, 10, 10, 10, 10, 11, 11, 8, 3, -3, -8, -11, -11, -10, -10, -10, -10, -10, -10, -10, -10, -11, -11, -8, -3, 3, 8, 11, 11, 10, 10, 10, 10, 10, 10, 10, 10, 11, 11, 8, 3, -3, -8, -11, -11, -10, -10, -10, -10, -10, -10, -10, -10, -11, -11, -8, -3, 3, 8, 11, 11, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10};
-
   static data_t shift_reg[N];
 
   acc_t sum_low = 0;
   acc_t sum_high = 0;
 
-// Two independent accumulation partitions.
-// Shift and accumulate in the same loop.
-Shift_Accum_Loop:
-  for (int i = N - 1; i >= 0; i--) {
+// Partition 1: Process taps 127 down to 64.
+Upper_Half:
+  for (int i = N - 1; i >= N / 2; i--) {
+#pragma HLS PIPELINE II = 1
+
+    data_t sample = shift_reg[i - 1];
+
+    shift_reg[i] = sample;
+    sum_high += sample * c[i];
+  }
+
+// Partition 2: Process taps 63 down to 0.
+Lower_Half:
+  for (int i = N / 2 - 1; i >= 0; i--) {
 #pragma HLS PIPELINE II = 1
 
     data_t sample;
@@ -36,14 +45,10 @@ Shift_Accum_Loop:
     }
 
     shift_reg[i] = sample;
-
-    if (i < N / 2) {
-      sum_low += sample * c[i];
-    } else {
-      sum_high += sample * c[i];
-    }
+    sum_low += sample * c[i];
   }
 
+  // Combine partial sums.
   acc_t acc = sum_low + sum_high;
   *y = (data_t)acc;
 }
