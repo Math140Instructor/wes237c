@@ -1,6 +1,6 @@
 open_component fir_orig.comp -reset
 add_files [list fir_orig.cpp]
-add_files -tb fir-top.cpp
+add_files -tb fir_test.cpp
 set_top fir
 puts "Running: set_top fir_orig"
 set_part xc7z020-clg400-1
