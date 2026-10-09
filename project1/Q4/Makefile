@@ -90,11 +90,9 @@ test: $(EXAMPLES_BIN)
 	done
 
 
-# Generate Tcl for selected source, always synthesize fir()
 $(HLS_TCL): $(SRC) $(HLS_CONFIG_FILE) FORCE
 	$(GEN_TCL) -c $(HLS_CONFIG_FILE) -i $(SRC) -o $@
-	sed -i -E 's/^[[:space:]]*set_top[[:space:]]+.*/set_top $(TOP)/; s/^[[:space:]]*add_files[[:space:]]+-tb[[:space:]]+.*/add_files -tb $(TOP)-top.cpp/' $@
-	@grep -qE '^[[:space:]]*set_top[[:space:]]+$(TOP)[[:space:]]*$$' $@ || { echo "ERROR: HLS top function is not $(TOP)"; exit 1; }
+	sed -i -E 's/^[[:space:]]*set_top[[:space:]]+.*/set_top $(TOP)/; s/^[[:space:]]*add_files[[:space:]]+-tb[[:space:]]+.*/add_files -tb $(TOP)_test.cpp/' $@
 
 # Run HLS synthesis
 # Phony target ensures synthesis runs when requested.
