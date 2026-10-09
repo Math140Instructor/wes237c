@@ -259,3 +259,156 @@ INFO: [HLS 200-112] Total CPU user time: 17.01 seconds. Total CPU system time: 3
 INFO: [vitis-run 60-791] Total elapsed time: 0h 0m 43s
 INFO: [vitis-run 60-1662] Stopping dispatch session having empty uuid.
 cp -f fir_loop_partition.comp/hls/syn/report/fir_csynth.rpt fir_loop_partition_csynth.rpt
+
+## Two loops with unroll
+LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu::/home/linux/ieng6/students/519/gam009/xlnx_compat_fix:/home/linux/ieng6/students/519/gam009/xlnx_compat_fix g++ -I/software/common/Xilinx_Vitis/Vitis_HLS/2024.2/bin/../../../Vitis/2024.2/include fir_test.cpp fir_loop_partition_unroll.cpp -g -o fir_test.bin
+Running fir_test.bin with fir_loop_partition_unroll.cpp
+/home/linux/ieng6/students/519/gam009/wes237c/project1/Q5/../../scripts/gen_hls_runner_script.py -c /home/linux/ieng6/students/519/gam009/wes237c/project1/Q5/__hls_config__.ini -i fir_loop_partition_unroll.cpp -o fir_loop_partition_unroll.tcl
+sed -i -E 's/^[[:space:]]*set_top[[:space:]]+.*/set_top fir/; s/^[[:space:]]*add_files[[:space:]]+-tb[[:space:]]+.*/add_files -tb fir_test.cpp/' fir_loop_partition_unroll.tcl
+vitis-run --mode hls --tcl fir_loop_partition_unroll.tcl
+
+****** vitis-run v2024.2 (64-bit)
+  **** SW Build 5239630 on 2024-11-10-11:19:46
+  **** Start of session at: Thu Oct  8 21:56:52 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+  **** HLS Build v2024.2 5238294
+Sourcing Tcl script '/home/linux/ieng6/students/519/gam009/wes237c/project1/Q5/fir_loop_partition_unroll.tcl'
+INFO: [HLS 200-1510] Running: open_component fir_loop_partition_unroll.comp -reset 
+INFO: [HLS 200-10] Creating and opening project '/home/linux/ieng6/students/519/gam009/wes237c/project1/Q5/fir_loop_partition_unroll.comp'.
+INFO: [HLS 200-10] Creating and opening solution '/home/linux/ieng6/students/519/gam009/wes237c/project1/Q5/fir_loop_partition_unroll.comp/hls'.
+INFO: [HLS 200-10] Cleaning up the solution database.
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-1510] Running: add_files fir_loop_partition_unroll.cpp 
+INFO: [HLS 200-10] Adding design file 'fir_loop_partition_unroll.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb fir_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'fir_test.cpp' to the project
+INFO: [HLS 200-1510] Running: set_top fir 
+Running: set_top fir_loop_partition_unroll
+INFO: [HLS 200-1510] Running: set_part xc7z020-clg400-1 
+INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg400-1'
+Running: set_part xc7z020-clg400-1
+INFO: [HLS 200-1510] Running: create_clock -period 10 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.17 seconds. CPU system time: 0.05 seconds. Elapsed time: 7.8 seconds; current allocated memory: 659.125 MB.
+INFO: [HLS 200-10] Analyzing design file 'fir_loop_partition_unroll.cpp' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.6 seconds. CPU system time: 0.93 seconds. Elapsed time: 1.82 seconds; current allocated memory: 660.137 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 200-1995] There were 59 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project1/Q5/fir_loop_partition_unroll.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 80 instructions in the design after the 'Unroll/Inline (step 1)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project1/Q5/fir_loop_partition_unroll.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 58 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project1/Q5/fir_loop_partition_unroll.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 52 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project1/Q5/fir_loop_partition_unroll.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 51 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project1/Q5/fir_loop_partition_unroll.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 51 instructions in the design after the 'Array/Struct (step 1)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project1/Q5/fir_loop_partition_unroll.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 51 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project1/Q5/fir_loop_partition_unroll.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 51 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project1/Q5/fir_loop_partition_unroll.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 51 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project1/Q5/fir_loop_partition_unroll.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 53 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project1/Q5/fir_loop_partition_unroll.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 53 instructions in the design after the 'Performance (step 1)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project1/Q5/fir_loop_partition_unroll.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 51 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project1/Q5/fir_loop_partition_unroll.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 157 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project1/Q5/fir_loop_partition_unroll.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 125 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project1/Q5/fir_loop_partition_unroll.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 129 instructions in the design after the 'HW Transforms (step 1)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project1/Q5/fir_loop_partition_unroll.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 138 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project1/Q5/fir_loop_partition_unroll.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 214-188] Unrolling loop 'Lower_Half' (fir_loop_partition_unroll.cpp:36:3) in function 'fir' partially with a factor of 2 (fir_loop_partition_unroll.cpp:15:0)
+INFO: [HLS 214-188] Unrolling loop 'Upper_Half' (fir_loop_partition_unroll.cpp:25:3) in function 'fir' partially with a factor of 2 (fir_loop_partition_unroll.cpp:15:0)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=cyclic factor=3 dim=1' for array 'fir(int*, int)::shift_reg' due to pipeline pragma (fir_loop_partition_unroll.cpp:26:9)
+INFO: [HLS 214-248] Applying array_partition to '_ZZ3firPiiE9shift_reg': Cyclic partitioning with factor 3 on dimension 1. (fir_loop_partition_unroll.cpp:19:0)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 4.66 seconds. CPU system time: 1 seconds. Elapsed time: 10.54 seconds; current allocated memory: 670.023 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 670.023 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.03 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.06 seconds; current allocated memory: 670.223 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 670.223 MB.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (fir_loop_partition_unroll.cpp:49:25) to (fir_loop_partition_unroll.cpp:48:18) in function 'fir'... converting 3 basic blocks.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.1 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.13 seconds; current allocated memory: 691.777 MB.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.1 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.12 seconds; current allocated memory: 701.648 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'fir' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'fir_Pipeline_Upper_Half' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Upper_Half'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 16, loop 'Upper_Half'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.11 seconds. CPU system time: 0.07 seconds. Elapsed time: 0.24 seconds; current allocated memory: 702.484 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.05 seconds. CPU system time: 0 seconds. Elapsed time: 0.1 seconds; current allocated memory: 702.484 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'fir_Pipeline_Lower_Half' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Lower_Half'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 16, loop 'Lower_Half'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.14 seconds. CPU system time: 0 seconds. Elapsed time: 0.2 seconds; current allocated memory: 702.504 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.05 seconds. CPU system time: 0 seconds. Elapsed time: 0.16 seconds; current allocated memory: 702.504 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'fir' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.05 seconds. CPU system time: 0 seconds. Elapsed time: 0.12 seconds; current allocated memory: 702.504 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.08 seconds; current allocated memory: 702.504 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'fir_Pipeline_Upper_Half' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'fir_Pipeline_Upper_Half' pipeline 'Upper_Half' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_6s_32s_32_2_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_7ns_9ns_15_1_1': 3 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_7_2_32_1_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'urem_7ns_3ns_2_11_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'fir_Pipeline_Upper_Half'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.08 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.23 seconds; current allocated memory: 702.699 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'fir_Pipeline_Lower_Half' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'fir_Pipeline_Lower_Half' pipeline 'Lower_Half' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_64ns_66ns_129_5_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_6ns_8ns_13_1_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_6s_32s_32_2_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_7_2_32_1_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'urem_7ns_3ns_2_11_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'fir_Pipeline_Lower_Half'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.21 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.36 seconds; current allocated memory: 705.273 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'fir' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'fir/y' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fir/x' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'fir' to 'ap_ctrl_hs'.
+WARNING: [RTGEN 206-101] Global array 'fir_int_int_c' will not be exposed as RTL port.
+INFO: [RTGEN 206-100] Generating core module 'mul_6s_32s_32_2_1': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'fir'.
+INFO: [HLS 200-2168] Implementing memory 'fir_fir_int_int_c_ROM_AUTO_1R' using auto ROMs with 2 copies to ensure enough ports to satisfy II or latency constraints.
+INFO: [RTMG 210-278] Implementing memory 'fir_fir_int_int_shift_reg_1_RAM_AUTO_1R1W' using auto RAMs.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.21 seconds. CPU system time: 0.03 seconds. Elapsed time: 0.44 seconds; current allocated memory: 707.387 MB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0.45 seconds. CPU system time: 0.05 seconds. Elapsed time: 1.06 seconds; current allocated memory: 709.695 MB.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0.47 seconds. CPU system time: 0.07 seconds. Elapsed time: 0.99 seconds; current allocated memory: 712.137 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for fir.
+INFO: [VLOG 209-307] Generating Verilog RTL for fir.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 143.31 MHz
+INFO: [HLS 200-2161] Finished Command csynth_design Elapsed time: 00:00:24; Allocated memory: 69.012 MB.
+INFO: [HLS 200-112] Total CPU user time: 16.52 seconds. Total CPU system time: 3.62 seconds. Total elapsed time: 36.87 seconds; peak allocated memory: 712.137 MB.
+INFO: [vitis-run 60-791] Total elapsed time: 0h 0m 39s
+INFO: [vitis-run 60-1662] Stopping dispatch session having empty uuid.
+cp -f fir_loop_partition_unroll.comp/hls/syn/report/fir_csynth.rpt fir_loop_partition_unroll_csynth.rpt
