@@ -1,21 +1,28 @@
 # ==========================================
-# HLS generated directories
-# Applies to all project subdirectories
+# Vitis HLS Generated Directories
 # ==========================================
-
 **/*.comp/
 **/*.autopilot/
 **/*_prj/
 **/solution*/
 **/csim/
 **/sim/
-**/xsim.dir/
+
+# ==========================================
+# Vivado Generated Directories
+# ==========================================
 **/.Xil/
+**/xsim.dir/
+**/*.cache/
+**/*.runs/
+**/*.sim/
+**/*.gen/
+**/*.hw/
+**/*.ip_user_files/
 
 # ==========================================
-# HLS generated files
+# HLS Generated Files
 # ==========================================
-
 **/fir.tcl
 **/*.hlscompile_summary
 **/*.protoinst
@@ -26,28 +33,43 @@
 **/hls_config.cfg
 
 # ==========================================
-# Build artifacts
+# Build Artifacts
 # ==========================================
-
 **/*.o
 **/*.so
 **/*.so.*
 **/*.a
 **/*.exe
 **/*.out
+**/*.bit
+**/*.bin
+**/*.ltx
+**/*.hwh
+**/*.dcp
 
 # ==========================================
-# Logs and reports
+# Logs, Reports, and Simulation Outputs
 # ==========================================
-
+**/logs/
 **/*.log
 **/*.jou
 **/*.str
+**/*.pb
+**/*.wdb
+**/*.wcfg
+**/*.vcd
+**/*.vpd
+**/*.dmp
 
 # ==========================================
-# Temporary files
+# Temporary Files
 # ==========================================
+*.tmp
+*.swp
+*.swo
+*~
+.DS_Store
 
-**/*.tmp
-**/*.swp
-**/.DS_Store
+# Vivado auxiliary block design files
+**/*.bda
+**/ui/*.ui
