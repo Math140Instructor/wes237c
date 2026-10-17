@@ -58,8 +58,8 @@ EXAMPLES_BIN = $(patsubst %.cpp,%.bin,$(EXAMPLES_CPP))
 
 
 # HLS targets
-HLS_TARGET = $(TOP).comp
-HLS_TCL = $(TOP).tcl
+HLS_TARGET = $(SRC_NAME).comp
+HLS_TCL = $(SRC_NAME).tcl
 
 
 # Default target
@@ -86,17 +86,17 @@ FORCE:
 test: $(EXAMPLES_BIN)
 	@set -e; for bin in $(EXAMPLES_BIN); do \
 		echo "Running $$bin with $(SRC)"; \
-		LD_LIBRARY_PATH=$(LD_LIBRARY_PATH) ./$$bin > $${bin%.bin}.log 2>&1; \
+		LD_LIBRARY_PATH=$(LD_LIBRARY_PATH) ./$$bin > $(SRC_NAME)_$${bin%.bin}.log 2>&1; \
 	done
-
 
 $(HLS_TCL): $(SRC) $(HLS_CONFIG_FILE) FORCE
 	$(GEN_TCL) -c $(HLS_CONFIG_FILE) -i $(SRC) -o $@
 	sed -i -E \
 		-e 's/^[[:space:]]*set_top[[:space:]]+.*/set_top $(TOP)/' \
-		-e 's/^[[:space:]]*open_component[[:space:]]+.*/open_component $(TOP).comp/' \
-		-e 's/^[[:space:]]*open_project[[:space:]]+.*/open_project $(TOP).comp/' \
+		-e 's/^[[:space:]]*open_component[[:space:]]+.*/open_component $(HLS_TARGET)/' \
+		-e 's/^[[:space:]]*open_project[[:space:]]+.*/open_project $(HLS_TARGET)/' \
 		$@
+
 # Run HLS synthesis
 # Phony target ensures synthesis runs when requested.
 .PHONY: hls
@@ -107,8 +107,8 @@ hls: $(HLS_TCL)
 # Copy synthesis report using selected source name
 .PHONY: report
 report: hls
-	cp -f $(TOP).comp/hls/syn/report/$(TOP)_csynth.rpt $(SRC_NAME)_csynth.rpt
-	
+	cp -f $(HLS_TARGET)/hls/syn/report/$(TOP)_csynth.rpt $(SRC_NAME)_csynth.rpt
+
 # Clean generated files
 .PHONY: clean
 clean:
