@@ -4,7 +4,7 @@
 #
 
 # select the HLS compiler to use (vivado_hls or vitis)
-TOP = fir
+TOP = cordiccart2pol
 
 USE_VITIS=1
 
