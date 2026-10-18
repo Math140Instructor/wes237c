@@ -11,7 +11,8 @@ void cordiccart2pol(data_t x, data_t y, data_t *r, data_t *theta) {
   data_t current_y = y;
   data_t current_theta = 0.0;
 
-  // Handle vectors in the left half-plane
+  // Rotate negative x vectors by 180 into the right half-plane so CORDIC can process them,
+  // then offset theta by plus/minus pi to account for the rotation and preserve the original angle.
   if (current_x < 0) {
     current_x = -current_x;
     current_y = -current_y;
