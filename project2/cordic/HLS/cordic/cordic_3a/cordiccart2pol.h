@@ -6,7 +6,7 @@
 #define NO_ITER 20
 
 // Fixed precision for all CORDIC variables
-typedef ap_fixed<8, 3> data_t;
+typedef ap_fixed<32, 3> data_t; // 8, 12, 16, 20, 24, and 32 total bits.
 
 void cordiccart2pol(data_t x, data_t y, data_t *r, data_t *theta);
 
