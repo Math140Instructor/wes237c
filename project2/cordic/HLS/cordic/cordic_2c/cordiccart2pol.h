@@ -9,7 +9,7 @@
 typedef ap_fixed<16, 3> data_t;
 
 // Change only the rotation table precision
-#define TABLE_BITS 4
+#define TABLE_BITS 32  //4, 8, 12, 16, 20, and 32
 typedef ap_fixed<TABLE_BITS, 3> table_t;
 
 void cordiccart2pol(data_t x, data_t y, data_t *r, data_t *theta);
