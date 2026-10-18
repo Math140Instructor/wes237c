@@ -79,9 +79,11 @@ HLS_TARGETS = $(patsubst %.cpp,%.comp,$(CXX_HLS_TARGET_FILES))
 hls: $(HLS_TARGETS)
 
 test: $(EXAMPLES_LOG)
+	@cat $(EXAMPLES_LOG)
 
 report: hls
 	cp -f $(TOP).comp/hls/syn/report/$(TOP)_csynth.rpt $(CURDIR) || true
+	@cat $(TOP).comp/hls/syn/report/$(TOP)_csynth.rpt
 
 
 clean:

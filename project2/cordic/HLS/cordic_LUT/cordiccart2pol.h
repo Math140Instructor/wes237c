@@ -6,10 +6,11 @@
 #define DEBUG 0
 //#define SYNTHESIS // uncomment me for synthesis; comment me for simulation
 
-typedef ap_fixed<8,3> data_t; // Data type of a value in the LUT
-
 #define W			8  // Total size of fixed-point representation
-#define I			2  // Number of integer bits of fixed-point representation
+#define I			3  // Number of integer bits of fixed-point representation
+//Use 4, 5, 6, 7, 8 total bits 
+typedef ap_fixed<W,I> data_t; // Data type of a value in the LUT
+
 #define FRACTIONAL_BITS	W-I  // Number of fractional bits
 #define LUT_SIZE	(1 << (W << 1)) // Size of the LUT = 2^(2*W)
 
