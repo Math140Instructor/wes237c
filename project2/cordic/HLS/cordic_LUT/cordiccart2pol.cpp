@@ -1,8 +1,8 @@
 #include "cordiccart2pol.h"
 #include <math.h>
 
-data_t my_LUT_th[LUT_SIZE];
-data_t my_LUT_r[LUT_SIZE];
+extern data_t my_LUT_th[LUT_SIZE]; // extern only for make test otherwise hls remove
+extern data_t my_LUT_r[LUT_SIZE];
 
 void init_cart2pol_LUTs(data_t th[LUT_SIZE], data_t r[LUT_SIZE]) {
   for (int i = 0; i < LUT_SIZE; i++) {
