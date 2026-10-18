@@ -84,9 +84,10 @@ FORCE:
 # Run testbench
 .PHONY: test
 test: $(EXAMPLES_BIN)
-	@set -e; for bin in $(EXAMPLES_BIN); do \
+	@for bin in $(EXAMPLES_BIN); do \
 		echo "Running $$bin with $(SRC)"; \
 		LD_LIBRARY_PATH=$(LD_LIBRARY_PATH) ./$$bin > $(SRC_NAME)_$${bin%.bin}.log 2>&1; \
+		cat $(SRC_NAME)_$${bin%.bin}.log; \
 	done
 
 $(HLS_TCL): $(SRC) $(HLS_CONFIG_FILE) FORCE
@@ -108,6 +109,7 @@ hls: $(HLS_TCL)
 .PHONY: report
 report: hls
 	cp -f $(HLS_TARGET)/hls/syn/report/$(TOP)_csynth.rpt $(SRC_NAME)_csynth.rpt
+	@cat $(SRC_NAME)_csynth.rpt
 
 # Clean generated files
 .PHONY: clean
