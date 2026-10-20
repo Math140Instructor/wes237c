@@ -88,6 +88,7 @@ test: $(EXAMPLES_BIN)
 		echo "Running $$bin with $(SRC)"; \
 		LD_LIBRARY_PATH=$(LD_LIBRARY_PATH) ./$$bin > $(SRC_NAME)_$${bin%.bin}.log 2>&1; \
 	done
+	@cat $(SRC_NAME)_*.log
 
 $(HLS_TCL): $(SRC) $(HLS_CONFIG_FILE) FORCE
 	$(GEN_TCL) -c $(HLS_CONFIG_FILE) -i $(SRC) -o $@
@@ -108,6 +109,7 @@ hls: $(HLS_TCL)
 .PHONY: report
 report: hls
 	cp -f $(HLS_TARGET)/hls/syn/report/$(TOP)_csynth.rpt $(SRC_NAME)_csynth.rpt
+	@cat $(TOP).comp/hls/syn/report/$(TOP)_csynth.rpt
 
 # Export synthesized design as Vivado IP
 EXPORT_TCL = export_$(SRC_NAME).tcl
