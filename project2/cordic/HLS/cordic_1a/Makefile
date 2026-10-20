@@ -48,7 +48,7 @@ LD_LIBRARY_PATH := $(shell echo $(value LD_LIBRARY_PATH) | grep -q $(LD_PATH_NEW
 
 
 # HLS configuration
-GEN_TCL = $(CURDIR)/../../../../../scripts/gen_hls_runner_script.py
+GEN_TCL = $(CURDIR)/../../../../scripts/gen_hls_runner_script.py
 HLS_CONFIG_FILE = $(CURDIR)/__hls_config__.ini
 
 
@@ -108,6 +108,20 @@ hls: $(HLS_TCL)
 .PHONY: report
 report: hls
 	cp -f $(HLS_TARGET)/hls/syn/report/$(TOP)_csynth.rpt $(SRC_NAME)_csynth.rpt
+
+# Export synthesized design as Vivado IP
+EXPORT_TCL = export_$(SRC_NAME).tcl
+
+$(EXPORT_TCL):
+	@{ \
+		echo "open_component $(HLS_TARGET)"; \
+		echo "export_design -format ip_catalog -rtl verilog -version 1.0 -ipname $(TOP)"; \
+		echo "exit"; \
+	} > $@
+
+.PHONY: ip
+ip: hls $(EXPORT_TCL)
+	$(HLS_COMPILER) $(EXPORT_TCL)
 
 # Clean generated files
 .PHONY: clean
