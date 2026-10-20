@@ -17,12 +17,24 @@ void cordiccart2pol(data_t x, data_t y, data_t *r, data_t *theta) {
 ...
 }`
 
-## Export IP
+## Make RTL
 make hls
+## Make IP
 vitis-run --mode hls --tcl export_ip.tcl
 
-## Locate your bitstream at:
+## Vivado
+IP repo hls/impl/ip
+datasources hls/impl/verilog
 
+block design
+processing system
+IP
+
+run synth
+run impl
+run bitream
+
+## Locate your bitstream at:
 vivado.runs/impl_1/design_2_wrapper.bit
 
 Locate the hardware handoff file (.hwh), typically under:
