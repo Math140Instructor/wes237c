@@ -20,3 +20,23 @@ void cordiccart2pol(data_t x, data_t y, data_t *r, data_t *theta) {
 ## Export IP
 make hls
 vitis-run --mode hls --tcl export_ip.tcl
+
+## Locate your bitstream at:
+
+vivado.runs/impl_1/design_2_wrapper.bit
+
+Locate the hardware handoff file (.hwh), typically under:
+
+vivado.gen/sources_1/bd/design_2/hw_handoff/
+
+Copy both files to your PYNQ-Z2 and rename them to:
+- cordic.bit
+- cordic.hwh
+
+Place both files alongside your Jupyter notebook.
+
+
+## misc
+set_property top design_2_wrapper [get_filesets sources_1]
+update_compile_order -fileset sources_1
+puts "TOP = [get_property top [get_filesets sources_1]]"
