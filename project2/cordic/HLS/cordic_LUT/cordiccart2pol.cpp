@@ -1,8 +1,13 @@
 #include "cordiccart2pol.h"
 #include <math.h>
 
-extern data_t my_LUT_th[LUT_SIZE]; // extern only for make test otherwise hls remove
-extern data_t my_LUT_r[LUT_SIZE];
+// data_t my_LUT_th[LUT_SIZE]; // extern only for make test otherwise hls remove
+// data_t my_LUT_r[LUT_SIZE];
+
+// Weak definitions allow testbench to provide its own arrays without linker conflicts
+// keeps the arrays defined for HLS synthesis.
+data_t my_LUT_th[LUT_SIZE] __attribute__((weak));
+data_t my_LUT_r[LUT_SIZE] __attribute__((weak));
 
 void init_cart2pol_LUTs(data_t th[LUT_SIZE], data_t r[LUT_SIZE]) {
   for (int i = 0; i < LUT_SIZE; i++) {
@@ -30,6 +35,12 @@ void init_cart2pol_LUTs(data_t th[LUT_SIZE], data_t r[LUT_SIZE]) {
 }
 
 void cordiccart2pol(data_t x, data_t y, data_t *r, data_t *theta) {
+#pragma HLS INTERFACE s_axilite port = x bundle = CTRL
+#pragma HLS INTERFACE s_axilite port = y bundle = CTRL
+#pragma HLS INTERFACE s_axilite port = r bundle = CTRL
+#pragma HLS INTERFACE s_axilite port = theta bundle = CTRL
+#pragma HLS INTERFACE s_axilite port = return bundle = CTRL
+
   static bool initialized = false;
 
   if (!initialized) {

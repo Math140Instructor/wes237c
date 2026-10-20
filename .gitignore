@@ -73,3 +73,5 @@
 # Vivado auxiliary block design files
 **/*.bda
 **/ui/*.ui
+
+**/vivado
