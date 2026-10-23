@@ -2,16 +2,16 @@
 LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu::/home/linux/ieng6/students/519/gam009/xlnx_compat_fix:/home/linux/ieng6/students/519/gam009/xlnx_compat_fix:/home/linux/ieng6/students/519/gam009/xlnx_compat_fix g++ -I/software/common/Xilinx_Vitis/Vitis_HLS/2024.2/bin/../../../Vitis/2024.2/include cordiccart2pol_test.cpp cordiccart2pol.cpp -g -o cordiccart2pol_test.bin
 Running cordiccart2pol_test.bin with cordiccart2pol.cpp
 ---Testing results----------------------------------
-Test: x=0.8147, y=0.1268, golden theta=0.1545, golden r=0.8245, your theta=0.5000, your r=0.7805
-Test: x=0.6322, y=-0.2786, golden theta=-0.4149, golden r=0.6909, your theta=-0.5000, your r=0.6603
-Test: x=-0.5470, y=-0.9575, golden theta=-2.0898, golden r=1.1027, your theta=-2.6416, your r=1.0381
-Test: x=-0.4855, y=0.7002, golden theta=2.1769, golden r=0.8521, your theta=2.6415, your r=0.7850
+Test: x=0.8147, y=0.1268, golden theta=0.1545, golden r=0.8245, your theta=0.5000, your r=0.7806
+Test: x=0.6322, y=-0.2786, golden theta=-0.4149, golden r=0.6909, your theta=-0.5000, your r=0.6604
+Test: x=-0.5470, y=-0.9575, golden theta=-2.0898, golden r=1.1027, your theta=-2.6416, your r=1.0382
+Test: x=-0.4855, y=0.7002, golden theta=2.1769, golden r=0.8521, your theta=2.6415, your r=0.7853
 ---RMS error----------------------------------
 ----------------------------------------------
    RMSE(R)           RMSE(Theta)
-0.053717751055956 0.402173668146133
+0.053562492132187 0.402173668146133
 ----------------------------------------------
-/home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/../../../../../scripts/gen_hls_runner_script.py -c /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/__hls_config__.ini -i cordiccart2pol.cpp -o cordiccart2pol.tcl
+/home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/../../../../scripts/gen_hls_runner_script.py -c /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/__hls_config__.ini -i cordiccart2pol.cpp -o cordiccart2pol.tcl
 sed -i -E \
 	-e 's/^[[:space:]]*set_top[[:space:]]+.*/set_top cordiccart2pol/' \
 	-e 's/^[[:space:]]*open_component[[:space:]]+.*/open_component cordiccart2pol.comp/' \
@@ -21,15 +21,15 @@ vitis-run --mode hls --tcl cordiccart2pol.tcl
 
 ****** vitis-run v2024.2 (64-bit)
   **** SW Build 5239630 on 2024-11-10-11:19:46
-  **** Start of session at: Sat Oct 17 21:42:02 2026
+  **** Start of session at: Thu Oct 22 21:11:33 2026
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
     ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 
   **** HLS Build v2024.2 5238294
-Sourcing Tcl script '/home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.tcl'
+Sourcing Tcl script '/home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.tcl'
 INFO: [HLS 200-1510] Running: open_component cordiccart2pol.comp 
-INFO: [HLS 200-10] Creating and opening project '/home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp'.
-INFO: [HLS 200-10] Creating and opening solution '/home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls'.
+INFO: [HLS 200-10] Creating and opening project '/home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp'.
+INFO: [HLS 200-10] Creating and opening solution '/home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls'.
 INFO: [HLS 200-1505] Using default flow_target 'vivado'
 Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
 INFO: [HLS 200-1510] Running: add_files cordiccart2pol.cpp 
@@ -44,36 +44,36 @@ Running: set_part xc7z020-clg400-1
 INFO: [HLS 200-1510] Running: create_clock -period 10 
 INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
 INFO: [HLS 200-1510] Running: csynth_design 
-INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.13 seconds. CPU system time: 0.04 seconds. Elapsed time: 7.73 seconds; current allocated memory: 659.211 MB.
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.26 seconds. CPU system time: 0.08 seconds. Elapsed time: 8.07 seconds; current allocated memory: 659.145 MB.
 INFO: [HLS 200-10] Analyzing design file 'cordiccart2pol.cpp' ... 
-INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 6.46 seconds. CPU system time: 1.18 seconds. Elapsed time: 7.91 seconds; current allocated memory: 660.582 MB.
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 9.71 seconds. CPU system time: 1.58 seconds. Elapsed time: 18.94 seconds; current allocated memory: 660.516 MB.
 INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
-INFO: [HLS 200-1995] There were 3,565 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 364 instructions in the design after the 'Unroll/Inline (step 1)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 169 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 110 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 90 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 89 instructions in the design after the 'Array/Struct (step 1)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 89 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 89 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 89 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 91 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 91 instructions in the design after the 'Performance (step 1)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 89 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 89 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 89 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 95 instructions in the design after the 'HW Transforms (step 1)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 100 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 3,565 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 364 instructions in the design after the 'Unroll/Inline (step 1)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 169 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 110 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 90 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 89 instructions in the design after the 'Array/Struct (step 1)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 89 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 89 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 89 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 91 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 91 instructions in the design after the 'Performance (step 1)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 89 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 89 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 89 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 95 instructions in the design after the 'HW Transforms (step 1)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 100 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
 INFO: [HLS 214-376] automatically set the pipeline for Loop< VITIS_LOOP_23_1> at cordiccart2pol.cpp:23:20 
-INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 4.32 seconds. CPU system time: 1 seconds. Elapsed time: 9.85 seconds; current allocated memory: 670.230 MB.
-INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 670.230 MB.
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 5.14 seconds. CPU system time: 1.18 seconds. Elapsed time: 11.75 seconds; current allocated memory: 670.238 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 670.238 MB.
 INFO: [HLS 200-10] Starting code transformations ...
-INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.01 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.03 seconds; current allocated memory: 670.363 MB.
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.05 seconds; current allocated memory: 670.320 MB.
 INFO: [HLS 200-10] Checking synthesizability ...
-INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 670.363 MB.
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 670.320 MB.
 INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (cordiccart2pol.cpp:7:16) to (cordiccart2pol.cpp:23:38) in function 'cordiccart2pol'... converting 7 basic blocks.
-INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.06 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.09 seconds; current allocated memory: 691.832 MB.
-INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.05 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.06 seconds; current allocated memory: 692.113 MB.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.06 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.13 seconds; current allocated memory: 691.785 MB.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.05 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.07 seconds; current allocated memory: 692.062 MB.
 INFO: [HLS 200-10] Starting hardware synthesis ...
 INFO: [HLS 200-10] Synthesizing 'cordiccart2pol' ...
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -85,25 +85,25 @@ WARNING: [HLS 200-880] The II Violation in module 'cordiccart2pol_Pipeline_VITIS
 Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-880.html
 INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 2, Depth = 4, loop 'VITIS_LOOP_23_1'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.08 seconds. CPU system time: 0.07 seconds. Elapsed time: 0.21 seconds; current allocated memory: 693.098 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.09 seconds. CPU system time: 0.04 seconds. Elapsed time: 0.26 seconds; current allocated memory: 693.133 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.06 seconds; current allocated memory: 693.098 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.04 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.07 seconds; current allocated memory: 693.133 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'cordiccart2pol' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.08 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.11 seconds; current allocated memory: 693.098 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.1 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.13 seconds; current allocated memory: 693.133 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.06 seconds; current allocated memory: 693.098 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.08 seconds; current allocated memory: 693.133 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'cordiccart2pol_Pipeline_VITIS_LOOP_23_1' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -112,7 +112,7 @@ INFO: [RTGEN 206-100] Generating core module 'mul_16s_2ns_17_1_1': 2 instance(s)
 INFO: [RTGEN 206-100] Finished creating RTL model for 'cordiccart2pol_Pipeline_VITIS_LOOP_23_1'.
 INFO: [RTMG 210-279] Implementing memory 'cordiccart2pol_cordiccart2pol_Pipeline_VITIS_LOOP_23_1_Kvalues_ROM_AUTO_1R' using auto ROMs.
 INFO: [RTMG 210-279] Implementing memory 'cordiccart2pol_cordiccart2pol_Pipeline_VITIS_LOOP_23_1_angles_ROM_AUTO_1R' using auto ROMs.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.08 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.14 seconds; current allocated memory: 693.113 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.08 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.17 seconds; current allocated memory: 693.133 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'cordiccart2pol' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -124,16 +124,16 @@ INFO: [RTGEN 206-500] Setting interface mode on function 'cordiccart2pol' to 'ap
 INFO: [RTGEN 206-100] Generating core module 'mul_16s_14ns_29_1_1': 1 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'sparsemux_9_3_16_1_1': 1 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'cordiccart2pol'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.14 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.25 seconds; current allocated memory: 693.812 MB.
-INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0.44 seconds. CPU system time: 0.05 seconds. Elapsed time: 0.73 seconds; current allocated memory: 696.625 MB.
-INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0.4 seconds. CPU system time: 0.09 seconds. Elapsed time: 0.64 seconds; current allocated memory: 699.215 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.16 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.34 seconds; current allocated memory: 693.762 MB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0.58 seconds. CPU system time: 0.07 seconds. Elapsed time: 1.26 seconds; current allocated memory: 696.586 MB.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0.48 seconds. CPU system time: 0.09 seconds. Elapsed time: 0.92 seconds; current allocated memory: 699.148 MB.
 INFO: [VHDL 208-304] Generating VHDL RTL for cordiccart2pol.
 INFO: [VLOG 209-307] Generating Verilog RTL for cordiccart2pol.
 INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
 INFO: [HLS 200-789] **** Estimated Fmax: 138.33 MHz
-INFO: [HLS 200-2161] Finished Command csynth_design Elapsed time: 00:00:28; Allocated memory: 56.004 MB.
-INFO: [HLS 200-112] Total CPU user time: 19.37 seconds. Total CPU system time: 3.88 seconds. Total elapsed time: 41.17 seconds; peak allocated memory: 699.215 MB.
-INFO: [vitis-run 60-791] Total elapsed time: 0h 0m 43s
+INFO: [HLS 200-2161] Finished Command csynth_design Elapsed time: 00:00:42; Allocated memory: 56.004 MB.
+INFO: [HLS 200-112] Total CPU user time: 26.62 seconds. Total CPU system time: 4.7 seconds. Total elapsed time: 59.71 seconds; peak allocated memory: 699.148 MB.
+INFO: [vitis-run 60-791] Total elapsed time: 0h 1m 2s
 INFO: [vitis-run 60-1662] Stopping dispatch session having empty uuid.
 cp -f cordiccart2pol.comp/hls/syn/report/cordiccart2pol_csynth.rpt cordiccart2pol_csynth.rpt
 
@@ -141,7 +141,7 @@ cp -f cordiccart2pol.comp/hls/syn/report/cordiccart2pol_csynth.rpt cordiccart2po
 ================================================================
 == Vitis HLS Report for 'cordiccart2pol'
 ================================================================
-* Date:           Sat Oct 17 21:42:44 2026
+* Date:           Thu Oct 22 21:12:33 2026
 
 * Version:        2024.2 (Build 5238294 on Nov  8 2024)
 * Project:        cordiccart2pol.comp
@@ -314,21 +314,20 @@ cp -f cordiccart2pol.comp/hls/syn/report/cordiccart2pol_csynth.rpt cordiccart2po
 |theta         |  out|   16|      ap_vld|           theta|       pointer|
 |theta_ap_vld  |  out|    1|      ap_vld|           theta|       pointer|
 +--------------+-----+-----+------------+----------------+--------------+
-
 ## N=8
 LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu::/home/linux/ieng6/students/519/gam009/xlnx_compat_fix:/home/linux/ieng6/students/519/gam009/xlnx_compat_fix:/home/linux/ieng6/students/519/gam009/xlnx_compat_fix g++ -I/software/common/Xilinx_Vitis/Vitis_HLS/2024.2/bin/../../../Vitis/2024.2/include cordiccart2pol_test.cpp cordiccart2pol.cpp -g -o cordiccart2pol_test.bin
 Running cordiccart2pol_test.bin with cordiccart2pol.cpp
 ---Testing results----------------------------------
-Test: x=0.8147, y=0.1268, golden theta=0.1545, golden r=0.8245, your theta=0.1875, your r=0.8241
-Test: x=0.6322, y=-0.2786, golden theta=-0.4149, golden r=0.6909, your theta=-0.4375, your r=0.6906
-Test: x=-0.5470, y=-0.9575, golden theta=-2.0898, golden r=1.1027, your theta=-2.0791, your r=1.1022
-Test: x=-0.4855, y=0.7002, golden theta=2.1769, golden r=0.8521, your theta=2.2040, your r=0.8518
+Test: x=0.8147, y=0.1268, golden theta=0.1545, golden r=0.8245, your theta=0.1875, your r=0.8243
+Test: x=0.6322, y=-0.2786, golden theta=-0.4149, golden r=0.6909, your theta=-0.4375, your r=0.6907
+Test: x=-0.5470, y=-0.9575, golden theta=-2.0898, golden r=1.1027, your theta=-2.0791, your r=1.1024
+Test: x=-0.4855, y=0.7002, golden theta=2.1769, golden r=0.8521, your theta=2.2040, your r=0.8519
 ---RMS error----------------------------------
 ----------------------------------------------
    RMSE(R)           RMSE(Theta)
-0.000402008008678 0.024727143347263
+0.000214391111513 0.024727143347263
 ----------------------------------------------
-/home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/../../../../../scripts/gen_hls_runner_script.py -c /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/__hls_config__.ini -i cordiccart2pol.cpp -o cordiccart2pol.tcl
+/home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/../../../../scripts/gen_hls_runner_script.py -c /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/__hls_config__.ini -i cordiccart2pol.cpp -o cordiccart2pol.tcl
 sed -i -E \
 	-e 's/^[[:space:]]*set_top[[:space:]]+.*/set_top cordiccart2pol/' \
 	-e 's/^[[:space:]]*open_component[[:space:]]+.*/open_component cordiccart2pol.comp/' \
@@ -338,15 +337,15 @@ vitis-run --mode hls --tcl cordiccart2pol.tcl
 
 ****** vitis-run v2024.2 (64-bit)
   **** SW Build 5239630 on 2024-11-10-11:19:46
-  **** Start of session at: Sat Oct 17 21:44:50 2026
+  **** Start of session at: Thu Oct 22 21:13:55 2026
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
     ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 
   **** HLS Build v2024.2 5238294
-Sourcing Tcl script '/home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.tcl'
+Sourcing Tcl script '/home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.tcl'
 INFO: [HLS 200-1510] Running: open_component cordiccart2pol.comp 
-INFO: [HLS 200-10] Creating and opening project '/home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp'.
-INFO: [HLS 200-10] Creating and opening solution '/home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls'.
+INFO: [HLS 200-10] Creating and opening project '/home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp'.
+INFO: [HLS 200-10] Creating and opening solution '/home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls'.
 INFO: [HLS 200-1505] Using default flow_target 'vivado'
 Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
 INFO: [HLS 200-1510] Running: add_files cordiccart2pol.cpp 
@@ -361,36 +360,36 @@ Running: set_part xc7z020-clg400-1
 INFO: [HLS 200-1510] Running: create_clock -period 10 
 INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
 INFO: [HLS 200-1510] Running: csynth_design 
-INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.13 seconds. CPU system time: 0.06 seconds. Elapsed time: 7.75 seconds; current allocated memory: 659.195 MB.
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.12 seconds. CPU system time: 0.05 seconds. Elapsed time: 7.76 seconds; current allocated memory: 659.148 MB.
 INFO: [HLS 200-10] Analyzing design file 'cordiccart2pol.cpp' ... 
-INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 6.57 seconds. CPU system time: 1.24 seconds. Elapsed time: 8.15 seconds; current allocated memory: 660.566 MB.
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 8.05 seconds. CPU system time: 1.26 seconds. Elapsed time: 10.29 seconds; current allocated memory: 660.520 MB.
 INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
-INFO: [HLS 200-1995] There were 3,565 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 364 instructions in the design after the 'Unroll/Inline (step 1)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 169 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 110 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 90 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 89 instructions in the design after the 'Array/Struct (step 1)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 89 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 89 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 89 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 91 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 91 instructions in the design after the 'Performance (step 1)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 89 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 89 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 89 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 95 instructions in the design after the 'HW Transforms (step 1)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 100 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 3,565 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 364 instructions in the design after the 'Unroll/Inline (step 1)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 169 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 110 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 90 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 89 instructions in the design after the 'Array/Struct (step 1)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 89 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 89 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 89 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 91 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 91 instructions in the design after the 'Performance (step 1)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 89 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 89 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 89 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 95 instructions in the design after the 'HW Transforms (step 1)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 100 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
 INFO: [HLS 214-376] automatically set the pipeline for Loop< VITIS_LOOP_23_1> at cordiccart2pol.cpp:23:20 
-INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 4.25 seconds. CPU system time: 1.04 seconds. Elapsed time: 9.85 seconds; current allocated memory: 670.180 MB.
-INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 670.180 MB.
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 4.87 seconds. CPU system time: 1.05 seconds. Elapsed time: 11.24 seconds; current allocated memory: 670.203 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 670.203 MB.
 INFO: [HLS 200-10] Starting code transformations ...
-INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.05 seconds; current allocated memory: 670.324 MB.
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.02 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.05 seconds; current allocated memory: 670.301 MB.
 INFO: [HLS 200-10] Checking synthesizability ...
-INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 670.363 MB.
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 670.316 MB.
 INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (cordiccart2pol.cpp:7:16) to (cordiccart2pol.cpp:23:38) in function 'cordiccart2pol'... converting 7 basic blocks.
-INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.05 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.08 seconds; current allocated memory: 691.832 MB.
-INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.05 seconds. CPU system time: 0 seconds. Elapsed time: 0.08 seconds; current allocated memory: 692.113 MB.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.07 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.13 seconds; current allocated memory: 691.781 MB.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.07 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.1 seconds; current allocated memory: 692.062 MB.
 INFO: [HLS 200-10] Starting hardware synthesis ...
 INFO: [HLS 200-10] Synthesizing 'cordiccart2pol' ...
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -402,25 +401,25 @@ WARNING: [HLS 200-880] The II Violation in module 'cordiccart2pol_Pipeline_VITIS
 Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-880.html
 INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 2, Depth = 4, loop 'VITIS_LOOP_23_1'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.09 seconds. CPU system time: 0.06 seconds. Elapsed time: 0.2 seconds; current allocated memory: 693.102 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.06 seconds. CPU system time: 0.08 seconds. Elapsed time: 0.24 seconds; current allocated memory: 693.051 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.05 seconds; current allocated memory: 693.102 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.08 seconds; current allocated memory: 693.051 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'cordiccart2pol' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.08 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.1 seconds; current allocated memory: 693.102 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.09 seconds. CPU system time: 0 seconds. Elapsed time: 0.12 seconds; current allocated memory: 693.051 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.07 seconds; current allocated memory: 693.102 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.03 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.08 seconds; current allocated memory: 693.051 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'cordiccart2pol_Pipeline_VITIS_LOOP_23_1' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -429,7 +428,7 @@ INFO: [RTGEN 206-100] Generating core module 'mul_16s_6ns_21_1_1': 2 instance(s)
 INFO: [RTGEN 206-100] Finished creating RTL model for 'cordiccart2pol_Pipeline_VITIS_LOOP_23_1'.
 INFO: [RTMG 210-279] Implementing memory 'cordiccart2pol_cordiccart2pol_Pipeline_VITIS_LOOP_23_1_Kvalues_ROM_AUTO_1R' using auto ROMs.
 INFO: [RTMG 210-279] Implementing memory 'cordiccart2pol_cordiccart2pol_Pipeline_VITIS_LOOP_23_1_angles_ROM_AUTO_1R' using auto ROMs.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.07 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.13 seconds; current allocated memory: 693.113 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.07 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.26 seconds; current allocated memory: 693.062 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'cordiccart2pol' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -441,16 +440,16 @@ INFO: [RTGEN 206-500] Setting interface mode on function 'cordiccart2pol' to 'ap
 INFO: [RTGEN 206-100] Generating core module 'mul_16s_14ns_29_1_1': 1 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'sparsemux_9_3_16_1_1': 1 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'cordiccart2pol'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.16 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.32 seconds; current allocated memory: 693.809 MB.
-INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0.44 seconds. CPU system time: 0.07 seconds. Elapsed time: 0.75 seconds; current allocated memory: 696.621 MB.
-INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0.43 seconds. CPU system time: 0.07 seconds. Elapsed time: 0.67 seconds; current allocated memory: 699.211 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.14 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.25 seconds; current allocated memory: 693.758 MB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0.37 seconds. CPU system time: 0.05 seconds. Elapsed time: 0.76 seconds; current allocated memory: 696.586 MB.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0.39 seconds. CPU system time: 0.08 seconds. Elapsed time: 0.73 seconds; current allocated memory: 699.148 MB.
 INFO: [VHDL 208-304] Generating VHDL RTL for cordiccart2pol.
 INFO: [VLOG 209-307] Generating Verilog RTL for cordiccart2pol.
 INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
 INFO: [HLS 200-789] **** Estimated Fmax: 138.33 MHz
-INFO: [HLS 200-2161] Finished Command csynth_design Elapsed time: 00:00:28; Allocated memory: 56.016 MB.
-INFO: [HLS 200-112] Total CPU user time: 19.75 seconds. Total CPU system time: 3.92 seconds. Total elapsed time: 41.61 seconds; peak allocated memory: 699.211 MB.
-INFO: [vitis-run 60-791] Total elapsed time: 0h 0m 44s
+INFO: [HLS 200-2161] Finished Command csynth_design Elapsed time: 00:00:32; Allocated memory: 56.000 MB.
+INFO: [HLS 200-112] Total CPU user time: 23.39 seconds. Total CPU system time: 4.19 seconds. Total elapsed time: 47.85 seconds; peak allocated memory: 699.148 MB.
+INFO: [vitis-run 60-791] Total elapsed time: 0h 0m 50s
 INFO: [vitis-run 60-1662] Stopping dispatch session having empty uuid.
 cp -f cordiccart2pol.comp/hls/syn/report/cordiccart2pol_csynth.rpt cordiccart2pol_csynth.rpt
 
@@ -458,7 +457,7 @@ cp -f cordiccart2pol.comp/hls/syn/report/cordiccart2pol_csynth.rpt cordiccart2po
 ================================================================
 == Vitis HLS Report for 'cordiccart2pol'
 ================================================================
-* Date:           Sat Oct 17 21:45:32 2026
+* Date:           Thu Oct 22 21:14:44 2026
 
 * Version:        2024.2 (Build 5238294 on Nov  8 2024)
 * Project:        cordiccart2pol.comp
@@ -631,21 +630,20 @@ cp -f cordiccart2pol.comp/hls/syn/report/cordiccart2pol_csynth.rpt cordiccart2po
 |theta         |  out|   16|      ap_vld|           theta|       pointer|
 |theta_ap_vld  |  out|    1|      ap_vld|           theta|       pointer|
 +--------------+-----+-----+------------+----------------+--------------+
-
 ## N=12
 LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu::/home/linux/ieng6/students/519/gam009/xlnx_compat_fix:/home/linux/ieng6/students/519/gam009/xlnx_compat_fix:/home/linux/ieng6/students/519/gam009/xlnx_compat_fix g++ -I/software/common/Xilinx_Vitis/Vitis_HLS/2024.2/bin/../../../Vitis/2024.2/include cordiccart2pol_test.cpp cordiccart2pol.cpp -g -o cordiccart2pol_test.bin
 Running cordiccart2pol_test.bin with cordiccart2pol.cpp
 ---Testing results----------------------------------
-Test: x=0.8147, y=0.1268, golden theta=0.1545, golden r=0.8245, your theta=0.1523, your r=0.8245
-Test: x=0.6322, y=-0.2786, golden theta=-0.4149, golden r=0.6909, your theta=-0.4180, your r=0.6907
-Test: x=-0.5470, y=-0.9575, golden theta=-2.0898, golden r=1.1027, your theta=-2.0869, your r=1.1025
-Test: x=-0.4855, y=0.7002, golden theta=2.1769, golden r=0.8521, your theta=2.1805, your r=0.8521
+Test: x=0.8147, y=0.1268, golden theta=0.1545, golden r=0.8245, your theta=0.1523, your r=0.8246
+Test: x=0.6322, y=-0.2786, golden theta=-0.4149, golden r=0.6909, your theta=-0.4180, your r=0.6908
+Test: x=-0.5470, y=-0.9575, golden theta=-2.0898, golden r=1.1027, your theta=-2.0869, your r=1.1028
+Test: x=-0.4855, y=0.7002, golden theta=2.1769, golden r=0.8521, your theta=2.1805, your r=0.8522
 ---RMS error----------------------------------
 ----------------------------------------------
    RMSE(R)           RMSE(Theta)
-0.000144417324918 0.002981615019962
+0.000097557240224 0.002981615019962
 ----------------------------------------------
-/home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/../../../../../scripts/gen_hls_runner_script.py -c /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/__hls_config__.ini -i cordiccart2pol.cpp -o cordiccart2pol.tcl
+/home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/../../../../scripts/gen_hls_runner_script.py -c /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/__hls_config__.ini -i cordiccart2pol.cpp -o cordiccart2pol.tcl
 sed -i -E \
 	-e 's/^[[:space:]]*set_top[[:space:]]+.*/set_top cordiccart2pol/' \
 	-e 's/^[[:space:]]*open_component[[:space:]]+.*/open_component cordiccart2pol.comp/' \
@@ -655,15 +653,15 @@ vitis-run --mode hls --tcl cordiccart2pol.tcl
 
 ****** vitis-run v2024.2 (64-bit)
   **** SW Build 5239630 on 2024-11-10-11:19:46
-  **** Start of session at: Sat Oct 17 21:47:21 2026
+  **** Start of session at: Thu Oct 22 21:15:28 2026
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
     ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 
   **** HLS Build v2024.2 5238294
-Sourcing Tcl script '/home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.tcl'
+Sourcing Tcl script '/home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.tcl'
 INFO: [HLS 200-1510] Running: open_component cordiccart2pol.comp 
-INFO: [HLS 200-10] Creating and opening project '/home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp'.
-INFO: [HLS 200-10] Creating and opening solution '/home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls'.
+INFO: [HLS 200-10] Creating and opening project '/home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp'.
+INFO: [HLS 200-10] Creating and opening solution '/home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls'.
 INFO: [HLS 200-1505] Using default flow_target 'vivado'
 Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
 INFO: [HLS 200-1510] Running: add_files cordiccart2pol.cpp 
@@ -678,36 +676,36 @@ Running: set_part xc7z020-clg400-1
 INFO: [HLS 200-1510] Running: create_clock -period 10 
 INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
 INFO: [HLS 200-1510] Running: csynth_design 
-INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.13 seconds. CPU system time: 0.05 seconds. Elapsed time: 7.74 seconds; current allocated memory: 659.211 MB.
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.13 seconds. CPU system time: 0.05 seconds. Elapsed time: 7.78 seconds; current allocated memory: 659.129 MB.
 INFO: [HLS 200-10] Analyzing design file 'cordiccart2pol.cpp' ... 
-INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 6.66 seconds. CPU system time: 1.19 seconds. Elapsed time: 8.11 seconds; current allocated memory: 660.582 MB.
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 7.9 seconds. CPU system time: 1.32 seconds. Elapsed time: 10.62 seconds; current allocated memory: 660.500 MB.
 INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
-INFO: [HLS 200-1995] There were 3,565 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 364 instructions in the design after the 'Unroll/Inline (step 1)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 169 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 110 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 90 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 89 instructions in the design after the 'Array/Struct (step 1)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 89 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 89 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 89 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 91 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 91 instructions in the design after the 'Performance (step 1)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 89 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 89 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 89 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 95 instructions in the design after the 'HW Transforms (step 1)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 100 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 3,565 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 364 instructions in the design after the 'Unroll/Inline (step 1)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 169 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 110 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 90 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 89 instructions in the design after the 'Array/Struct (step 1)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 89 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 89 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 89 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 91 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 91 instructions in the design after the 'Performance (step 1)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 89 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 89 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 89 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 95 instructions in the design after the 'HW Transforms (step 1)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 100 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
 INFO: [HLS 214-376] automatically set the pipeline for Loop< VITIS_LOOP_23_1> at cordiccart2pol.cpp:23:20 
-INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 4.38 seconds. CPU system time: 1.07 seconds. Elapsed time: 10.05 seconds; current allocated memory: 670.184 MB.
-INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 670.184 MB.
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 5.21 seconds. CPU system time: 1.19 seconds. Elapsed time: 11.8 seconds; current allocated memory: 670.117 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 670.117 MB.
 INFO: [HLS 200-10] Starting code transformations ...
-INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 670.332 MB.
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.02 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.07 seconds; current allocated memory: 670.273 MB.
 INFO: [HLS 200-10] Checking synthesizability ...
-INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 670.363 MB.
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.08 seconds; current allocated memory: 670.316 MB.
 INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (cordiccart2pol.cpp:7:16) to (cordiccart2pol.cpp:23:38) in function 'cordiccart2pol'... converting 7 basic blocks.
-INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.06 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.09 seconds; current allocated memory: 691.836 MB.
-INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.06 seconds. CPU system time: 0 seconds. Elapsed time: 0.07 seconds; current allocated memory: 692.113 MB.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.08 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.13 seconds; current allocated memory: 691.785 MB.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.09 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.19 seconds; current allocated memory: 692.059 MB.
 INFO: [HLS 200-10] Starting hardware synthesis ...
 INFO: [HLS 200-10] Synthesizing 'cordiccart2pol' ...
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -719,25 +717,25 @@ WARNING: [HLS 200-880] The II Violation in module 'cordiccart2pol_Pipeline_VITIS
 Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-880.html
 INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 2, Depth = 4, loop 'VITIS_LOOP_23_1'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.09 seconds. CPU system time: 0.07 seconds. Elapsed time: 0.21 seconds; current allocated memory: 693.102 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.12 seconds. CPU system time: 0.1 seconds. Elapsed time: 0.4 seconds; current allocated memory: 693.129 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.05 seconds; current allocated memory: 693.102 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.16 seconds; current allocated memory: 693.129 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'cordiccart2pol' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.09 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.12 seconds; current allocated memory: 693.102 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.13 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.18 seconds; current allocated memory: 693.129 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.04 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.07 seconds; current allocated memory: 693.102 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.05 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.14 seconds; current allocated memory: 693.129 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'cordiccart2pol_Pipeline_VITIS_LOOP_23_1' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -746,7 +744,7 @@ INFO: [RTGEN 206-100] Generating core module 'mul_16s_10ns_25_1_1': 2 instance(s
 INFO: [RTGEN 206-100] Finished creating RTL model for 'cordiccart2pol_Pipeline_VITIS_LOOP_23_1'.
 INFO: [RTMG 210-279] Implementing memory 'cordiccart2pol_cordiccart2pol_Pipeline_VITIS_LOOP_23_1_Kvalues_ROM_AUTO_1R' using auto ROMs.
 INFO: [RTMG 210-279] Implementing memory 'cordiccart2pol_cordiccart2pol_Pipeline_VITIS_LOOP_23_1_angles_ROM_AUTO_1R' using auto ROMs.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.08 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.14 seconds; current allocated memory: 693.117 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.08 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.32 seconds; current allocated memory: 693.129 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'cordiccart2pol' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -758,16 +756,16 @@ INFO: [RTGEN 206-500] Setting interface mode on function 'cordiccart2pol' to 'ap
 INFO: [RTGEN 206-100] Generating core module 'mul_16s_14ns_29_1_1': 1 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'sparsemux_9_3_16_1_1': 1 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'cordiccart2pol'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.16 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.27 seconds; current allocated memory: 693.809 MB.
-INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0.47 seconds. CPU system time: 0.06 seconds. Elapsed time: 0.78 seconds; current allocated memory: 696.621 MB.
-INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0.44 seconds. CPU system time: 0.11 seconds. Elapsed time: 0.72 seconds; current allocated memory: 699.215 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.19 seconds. CPU system time: 0.03 seconds. Elapsed time: 0.68 seconds; current allocated memory: 693.762 MB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0.5 seconds. CPU system time: 0.09 seconds. Elapsed time: 1.22 seconds; current allocated memory: 696.586 MB.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0.49 seconds. CPU system time: 0.11 seconds. Elapsed time: 0.91 seconds; current allocated memory: 699.152 MB.
 INFO: [VHDL 208-304] Generating VHDL RTL for cordiccart2pol.
 INFO: [VLOG 209-307] Generating Verilog RTL for cordiccart2pol.
 INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
 INFO: [HLS 200-789] **** Estimated Fmax: 138.33 MHz
-INFO: [HLS 200-2161] Finished Command csynth_design Elapsed time: 00:00:28; Allocated memory: 56.004 MB.
-INFO: [HLS 200-112] Total CPU user time: 19.81 seconds. Total CPU system time: 3.95 seconds. Total elapsed time: 41.17 seconds; peak allocated memory: 699.215 MB.
-INFO: [vitis-run 60-791] Total elapsed time: 0h 0m 43s
+INFO: [HLS 200-2161] Finished Command csynth_design Elapsed time: 00:00:34; Allocated memory: 56.023 MB.
+INFO: [HLS 200-112] Total CPU user time: 22.88 seconds. Total CPU system time: 4.44 seconds. Total elapsed time: 48.76 seconds; peak allocated memory: 699.152 MB.
+INFO: [vitis-run 60-791] Total elapsed time: 0h 0m 51s
 INFO: [vitis-run 60-1662] Stopping dispatch session having empty uuid.
 cp -f cordiccart2pol.comp/hls/syn/report/cordiccart2pol_csynth.rpt cordiccart2pol_csynth.rpt
 
@@ -775,7 +773,7 @@ cp -f cordiccart2pol.comp/hls/syn/report/cordiccart2pol_csynth.rpt cordiccart2po
 ================================================================
 == Vitis HLS Report for 'cordiccart2pol'
 ================================================================
-* Date:           Sat Oct 17 21:48:02 2026
+* Date:           Thu Oct 22 21:16:17 2026
 
 * Version:        2024.2 (Build 5238294 on Nov  8 2024)
 * Project:        cordiccart2pol.comp
@@ -953,16 +951,16 @@ cp -f cordiccart2pol.comp/hls/syn/report/cordiccart2pol_csynth.rpt cordiccart2po
 LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu::/home/linux/ieng6/students/519/gam009/xlnx_compat_fix:/home/linux/ieng6/students/519/gam009/xlnx_compat_fix:/home/linux/ieng6/students/519/gam009/xlnx_compat_fix g++ -I/software/common/Xilinx_Vitis/Vitis_HLS/2024.2/bin/../../../Vitis/2024.2/include cordiccart2pol_test.cpp cordiccart2pol.cpp -g -o cordiccart2pol_test.bin
 Running cordiccart2pol_test.bin with cordiccart2pol.cpp
 ---Testing results----------------------------------
-Test: x=0.8147, y=0.1268, golden theta=0.1545, golden r=0.8245, your theta=0.1536, your r=0.8245
-Test: x=0.6322, y=-0.2786, golden theta=-0.4149, golden r=0.6909, your theta=-0.4146, your r=0.6909
-Test: x=-0.5470, y=-0.9575, golden theta=-2.0898, golden r=1.1027, your theta=-2.0898, your r=1.1027
-Test: x=-0.4855, y=0.7002, golden theta=2.1769, golden r=0.8521, your theta=2.1769, your r=0.8522
+Test: x=0.8147, y=0.1268, golden theta=0.1545, golden r=0.8245, your theta=0.1536, your r=0.8246
+Test: x=0.6322, y=-0.2786, golden theta=-0.4149, golden r=0.6909, your theta=-0.4146, your r=0.6910
+Test: x=-0.5470, y=-0.9575, golden theta=-2.0898, golden r=1.1027, your theta=-2.0898, your r=1.1029
+Test: x=-0.4855, y=0.7002, golden theta=2.1769, golden r=0.8521, your theta=2.1769, your r=0.8523
 ---RMS error----------------------------------
 ----------------------------------------------
    RMSE(R)           RMSE(Theta)
-0.000058181449276 0.000509457604494
+0.000171169609530 0.000509457604494
 ----------------------------------------------
-/home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/../../../../../scripts/gen_hls_runner_script.py -c /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/__hls_config__.ini -i cordiccart2pol.cpp -o cordiccart2pol.tcl
+/home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/../../../../scripts/gen_hls_runner_script.py -c /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/__hls_config__.ini -i cordiccart2pol.cpp -o cordiccart2pol.tcl
 sed -i -E \
 	-e 's/^[[:space:]]*set_top[[:space:]]+.*/set_top cordiccart2pol/' \
 	-e 's/^[[:space:]]*open_component[[:space:]]+.*/open_component cordiccart2pol.comp/' \
@@ -972,15 +970,15 @@ vitis-run --mode hls --tcl cordiccart2pol.tcl
 
 ****** vitis-run v2024.2 (64-bit)
   **** SW Build 5239630 on 2024-11-10-11:19:46
-  **** Start of session at: Sat Oct 17 21:48:32 2026
+  **** Start of session at: Thu Oct 22 21:17:29 2026
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
     ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 
   **** HLS Build v2024.2 5238294
-Sourcing Tcl script '/home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.tcl'
+Sourcing Tcl script '/home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.tcl'
 INFO: [HLS 200-1510] Running: open_component cordiccart2pol.comp 
-INFO: [HLS 200-10] Creating and opening project '/home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp'.
-INFO: [HLS 200-10] Creating and opening solution '/home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls'.
+INFO: [HLS 200-10] Creating and opening project '/home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp'.
+INFO: [HLS 200-10] Creating and opening solution '/home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls'.
 INFO: [HLS 200-1505] Using default flow_target 'vivado'
 Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
 INFO: [HLS 200-1510] Running: add_files cordiccart2pol.cpp 
@@ -995,36 +993,36 @@ Running: set_part xc7z020-clg400-1
 INFO: [HLS 200-1510] Running: create_clock -period 10 
 INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
 INFO: [HLS 200-1510] Running: csynth_design 
-INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.17 seconds. CPU system time: 0.06 seconds. Elapsed time: 7.8 seconds; current allocated memory: 659.211 MB.
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.15 seconds. CPU system time: 0.06 seconds. Elapsed time: 7.82 seconds; current allocated memory: 659.145 MB.
 INFO: [HLS 200-10] Analyzing design file 'cordiccart2pol.cpp' ... 
-INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 6.39 seconds. CPU system time: 1.24 seconds. Elapsed time: 8.08 seconds; current allocated memory: 660.582 MB.
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 8.38 seconds. CPU system time: 1.34 seconds. Elapsed time: 14.11 seconds; current allocated memory: 660.516 MB.
 INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
-INFO: [HLS 200-1995] There were 3,540 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 359 instructions in the design after the 'Unroll/Inline (step 1)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 163 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 105 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 84 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 83 instructions in the design after the 'Array/Struct (step 1)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 83 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 83 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 83 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 85 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 85 instructions in the design after the 'Performance (step 1)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 83 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 83 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 83 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 89 instructions in the design after the 'HW Transforms (step 1)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 94 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 3,540 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 359 instructions in the design after the 'Unroll/Inline (step 1)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 163 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 105 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 84 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 83 instructions in the design after the 'Array/Struct (step 1)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 83 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 83 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 83 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 85 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 85 instructions in the design after the 'Performance (step 1)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 83 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 83 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 83 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 89 instructions in the design after the 'HW Transforms (step 1)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 94 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
 INFO: [HLS 214-376] automatically set the pipeline for Loop< VITIS_LOOP_23_1> at cordiccart2pol.cpp:23:20 
-INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 4.5 seconds. CPU system time: 0.99 seconds. Elapsed time: 10.03 seconds; current allocated memory: 670.285 MB.
-INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 670.285 MB.
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 4.96 seconds. CPU system time: 1.06 seconds. Elapsed time: 11.08 seconds; current allocated memory: 670.160 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0.01 seconds. Elapsed time: 0 seconds; current allocated memory: 670.160 MB.
 INFO: [HLS 200-10] Starting code transformations ...
-INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 670.336 MB.
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 670.270 MB.
 INFO: [HLS 200-10] Checking synthesizability ...
-INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 670.352 MB.
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 670.293 MB.
 INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (cordiccart2pol.cpp:7:16) to (cordiccart2pol.cpp:23:38) in function 'cordiccart2pol'... converting 7 basic blocks.
-INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.05 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.08 seconds; current allocated memory: 691.789 MB.
-INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.05 seconds. CPU system time: 0 seconds. Elapsed time: 0.06 seconds; current allocated memory: 692.055 MB.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.06 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.09 seconds; current allocated memory: 691.746 MB.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.06 seconds. CPU system time: 0 seconds. Elapsed time: 0.08 seconds; current allocated memory: 692.004 MB.
 INFO: [HLS 200-10] Starting hardware synthesis ...
 INFO: [HLS 200-10] Synthesizing 'cordiccart2pol' ...
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -1036,25 +1034,25 @@ WARNING: [HLS 200-880] The II Violation in module 'cordiccart2pol_Pipeline_VITIS
 Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-880.html
 INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 2, Depth = 4, loop 'VITIS_LOOP_23_1'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.08 seconds. CPU system time: 0.07 seconds. Elapsed time: 0.2 seconds; current allocated memory: 693.043 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.08 seconds. CPU system time: 0.06 seconds. Elapsed time: 0.25 seconds; current allocated memory: 692.992 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.05 seconds; current allocated memory: 693.043 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.07 seconds; current allocated memory: 692.992 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'cordiccart2pol' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.09 seconds. CPU system time: 0 seconds. Elapsed time: 0.11 seconds; current allocated memory: 693.043 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.11 seconds. CPU system time: 0 seconds. Elapsed time: 0.15 seconds; current allocated memory: 692.992 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.07 seconds; current allocated memory: 693.043 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.11 seconds; current allocated memory: 692.992 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'cordiccart2pol_Pipeline_VITIS_LOOP_23_1' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -1063,7 +1061,7 @@ INFO: [RTGEN 206-100] Generating core module 'mul_14ns_16s_29_1_1': 2 instance(s
 INFO: [RTGEN 206-100] Finished creating RTL model for 'cordiccart2pol_Pipeline_VITIS_LOOP_23_1'.
 INFO: [RTMG 210-279] Implementing memory 'cordiccart2pol_cordiccart2pol_Pipeline_VITIS_LOOP_23_1_Kvalues_ROM_AUTO_1R' using auto ROMs.
 INFO: [RTMG 210-279] Implementing memory 'cordiccart2pol_cordiccart2pol_Pipeline_VITIS_LOOP_23_1_angles_ROM_AUTO_1R' using auto ROMs.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.07 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.13 seconds; current allocated memory: 693.055 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.07 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.17 seconds; current allocated memory: 693.004 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'cordiccart2pol' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -1075,16 +1073,16 @@ INFO: [RTGEN 206-500] Setting interface mode on function 'cordiccart2pol' to 'ap
 INFO: [RTGEN 206-100] Generating core module 'mul_16s_14ns_29_1_1': 1 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'sparsemux_9_3_16_1_1': 1 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'cordiccart2pol'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.15 seconds. CPU system time: 0.03 seconds. Elapsed time: 0.25 seconds; current allocated memory: 693.727 MB.
-INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0.39 seconds. CPU system time: 0.05 seconds. Elapsed time: 0.67 seconds; current allocated memory: 696.570 MB.
-INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0.45 seconds. CPU system time: 0.1 seconds. Elapsed time: 0.69 seconds; current allocated memory: 699.055 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.14 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.37 seconds; current allocated memory: 693.680 MB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0.55 seconds. CPU system time: 0.07 seconds. Elapsed time: 1.31 seconds; current allocated memory: 696.539 MB.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0.38 seconds. CPU system time: 0.08 seconds. Elapsed time: 0.74 seconds; current allocated memory: 699.020 MB.
 INFO: [VHDL 208-304] Generating VHDL RTL for cordiccart2pol.
 INFO: [VLOG 209-307] Generating Verilog RTL for cordiccart2pol.
 INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
 INFO: [HLS 200-789] **** Estimated Fmax: 138.33 MHz
-INFO: [HLS 200-2161] Finished Command csynth_design Elapsed time: 00:00:28; Allocated memory: 55.844 MB.
-INFO: [HLS 200-112] Total CPU user time: 20.22 seconds. Total CPU system time: 4.02 seconds. Total elapsed time: 41.17 seconds; peak allocated memory: 699.055 MB.
-INFO: [vitis-run 60-791] Total elapsed time: 0h 0m 43s
+INFO: [HLS 200-2161] Finished Command csynth_design Elapsed time: 00:00:36; Allocated memory: 55.906 MB.
+INFO: [HLS 200-112] Total CPU user time: 23.53 seconds. Total CPU system time: 4.26 seconds. Total elapsed time: 53.65 seconds; peak allocated memory: 699.051 MB.
+INFO: [vitis-run 60-791] Total elapsed time: 0h 0m 56s
 INFO: [vitis-run 60-1662] Stopping dispatch session having empty uuid.
 cp -f cordiccart2pol.comp/hls/syn/report/cordiccart2pol_csynth.rpt cordiccart2pol_csynth.rpt
 
@@ -1092,7 +1090,7 @@ cp -f cordiccart2pol.comp/hls/syn/report/cordiccart2pol_csynth.rpt cordiccart2po
 ================================================================
 == Vitis HLS Report for 'cordiccart2pol'
 ================================================================
-* Date:           Sat Oct 17 21:49:14 2026
+* Date:           Thu Oct 22 21:18:23 2026
 
 * Version:        2024.2 (Build 5238294 on Nov  8 2024)
 * Project:        cordiccart2pol.comp
@@ -1270,16 +1268,16 @@ cp -f cordiccart2pol.comp/hls/syn/report/cordiccart2pol_csynth.rpt cordiccart2po
 LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu::/home/linux/ieng6/students/519/gam009/xlnx_compat_fix:/home/linux/ieng6/students/519/gam009/xlnx_compat_fix:/home/linux/ieng6/students/519/gam009/xlnx_compat_fix g++ -I/software/common/Xilinx_Vitis/Vitis_HLS/2024.2/bin/../../../Vitis/2024.2/include cordiccart2pol_test.cpp cordiccart2pol.cpp -g -o cordiccart2pol_test.bin
 Running cordiccart2pol_test.bin with cordiccart2pol.cpp
 ---Testing results----------------------------------
-Test: x=0.8147, y=0.1268, golden theta=0.1545, golden r=0.8245, your theta=0.1530, your r=0.8245
-Test: x=0.6322, y=-0.2786, golden theta=-0.4149, golden r=0.6909, your theta=-0.4155, your r=0.6909
-Test: x=-0.5470, y=-0.9575, golden theta=-2.0898, golden r=1.1027, your theta=-2.0907, your r=1.1027
-Test: x=-0.4855, y=0.7002, golden theta=2.1769, golden r=0.8521, your theta=2.1759, your r=0.8522
+Test: x=0.8147, y=0.1268, golden theta=0.1545, golden r=0.8245, your theta=0.1530, your r=0.8246
+Test: x=0.6322, y=-0.2786, golden theta=-0.4149, golden r=0.6909, your theta=-0.4155, your r=0.6910
+Test: x=-0.5470, y=-0.9575, golden theta=-2.0898, golden r=1.1027, your theta=-2.0907, your r=1.1029
+Test: x=-0.4855, y=0.7002, golden theta=2.1769, golden r=0.8521, your theta=2.1759, your r=0.8523
 ---RMS error----------------------------------
 ----------------------------------------------
    RMSE(R)           RMSE(Theta)
-0.000058181449276 0.001089673838578
+0.000171169609530 0.001089673838578
 ----------------------------------------------
-/home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/../../../../../scripts/gen_hls_runner_script.py -c /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/__hls_config__.ini -i cordiccart2pol.cpp -o cordiccart2pol.tcl
+/home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/../../../../scripts/gen_hls_runner_script.py -c /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/__hls_config__.ini -i cordiccart2pol.cpp -o cordiccart2pol.tcl
 sed -i -E \
 	-e 's/^[[:space:]]*set_top[[:space:]]+.*/set_top cordiccart2pol/' \
 	-e 's/^[[:space:]]*open_component[[:space:]]+.*/open_component cordiccart2pol.comp/' \
@@ -1289,15 +1287,15 @@ vitis-run --mode hls --tcl cordiccart2pol.tcl
 
 ****** vitis-run v2024.2 (64-bit)
   **** SW Build 5239630 on 2024-11-10-11:19:46
-  **** Start of session at: Sat Oct 17 21:50:52 2026
+  **** Start of session at: Thu Oct 22 21:19:18 2026
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
     ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 
   **** HLS Build v2024.2 5238294
-Sourcing Tcl script '/home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.tcl'
+Sourcing Tcl script '/home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.tcl'
 INFO: [HLS 200-1510] Running: open_component cordiccart2pol.comp 
-INFO: [HLS 200-10] Creating and opening project '/home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp'.
-INFO: [HLS 200-10] Creating and opening solution '/home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls'.
+INFO: [HLS 200-10] Creating and opening project '/home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp'.
+INFO: [HLS 200-10] Creating and opening solution '/home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls'.
 INFO: [HLS 200-1505] Using default flow_target 'vivado'
 Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
 INFO: [HLS 200-1510] Running: add_files cordiccart2pol.cpp 
@@ -1312,36 +1310,36 @@ Running: set_part xc7z020-clg400-1
 INFO: [HLS 200-1510] Running: create_clock -period 10 
 INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
 INFO: [HLS 200-1510] Running: csynth_design 
-INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.12 seconds. CPU system time: 0.06 seconds. Elapsed time: 7.73 seconds; current allocated memory: 659.195 MB.
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.26 seconds. CPU system time: 0.07 seconds. Elapsed time: 7.95 seconds; current allocated memory: 659.148 MB.
 INFO: [HLS 200-10] Analyzing design file 'cordiccart2pol.cpp' ... 
-INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 6.69 seconds. CPU system time: 1.22 seconds. Elapsed time: 8.19 seconds; current allocated memory: 660.566 MB.
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 9.83 seconds. CPU system time: 1.44 seconds. Elapsed time: 13.85 seconds; current allocated memory: 660.520 MB.
 INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
-INFO: [HLS 200-1995] There were 3,593 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 361 instructions in the design after the 'Unroll/Inline (step 1)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 166 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 107 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 91 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 91 instructions in the design after the 'Array/Struct (step 1)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 91 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 91 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 91 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 95 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 95 instructions in the design after the 'Performance (step 1)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 91 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 91 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 91 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 97 instructions in the design after the 'HW Transforms (step 1)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 104 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 3,593 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 361 instructions in the design after the 'Unroll/Inline (step 1)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 166 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 107 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 91 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 91 instructions in the design after the 'Array/Struct (step 1)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 91 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 91 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 91 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 95 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 95 instructions in the design after the 'Performance (step 1)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 91 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 91 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 91 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 97 instructions in the design after the 'HW Transforms (step 1)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 104 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
 INFO: [HLS 214-376] automatically set the pipeline for Loop< VITIS_LOOP_23_1> at cordiccart2pol.cpp:23:20 
-INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 4.22 seconds. CPU system time: 1.03 seconds. Elapsed time: 9.63 seconds; current allocated memory: 670.230 MB.
-INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 670.230 MB.
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 5.39 seconds. CPU system time: 1.11 seconds. Elapsed time: 11.19 seconds; current allocated memory: 670.160 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 670.160 MB.
 INFO: [HLS 200-10] Starting code transformations ...
-INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.02 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.03 seconds; current allocated memory: 670.359 MB.
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.06 seconds; current allocated memory: 670.277 MB.
 INFO: [HLS 200-10] Checking synthesizability ...
-INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 670.406 MB.
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 670.352 MB.
 INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (cordiccart2pol.cpp:7:16) to (cordiccart2pol.cpp:23:38) in function 'cordiccart2pol'... converting 7 basic blocks.
-INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.05 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.08 seconds; current allocated memory: 691.867 MB.
-INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.06 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.06 seconds; current allocated memory: 692.125 MB.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.07 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.16 seconds; current allocated memory: 691.816 MB.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.08 seconds. CPU system time: 0 seconds. Elapsed time: 0.13 seconds; current allocated memory: 692.074 MB.
 INFO: [HLS 200-10] Starting hardware synthesis ...
 INFO: [HLS 200-10] Synthesizing 'cordiccart2pol' ...
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -1353,25 +1351,25 @@ WARNING: [HLS 200-880] The II Violation in module 'cordiccart2pol_Pipeline_VITIS
 Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-880.html
 INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 2, Depth = 4, loop 'VITIS_LOOP_23_1'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.1 seconds. CPU system time: 0.07 seconds. Elapsed time: 0.21 seconds; current allocated memory: 693.195 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.12 seconds. CPU system time: 0.05 seconds. Elapsed time: 0.32 seconds; current allocated memory: 693.145 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.04 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.06 seconds; current allocated memory: 693.195 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.11 seconds; current allocated memory: 693.145 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'cordiccart2pol' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.08 seconds. CPU system time: 0 seconds. Elapsed time: 0.11 seconds; current allocated memory: 693.195 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.11 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.2 seconds; current allocated memory: 693.145 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.06 seconds; current allocated memory: 693.195 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.08 seconds; current allocated memory: 693.145 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'cordiccart2pol_Pipeline_VITIS_LOOP_23_1' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -1380,7 +1378,7 @@ INFO: [RTGEN 206-100] Generating core module 'mul_18ns_16s_33_1_1': 2 instance(s
 INFO: [RTGEN 206-100] Finished creating RTL model for 'cordiccart2pol_Pipeline_VITIS_LOOP_23_1'.
 INFO: [RTMG 210-279] Implementing memory 'cordiccart2pol_cordiccart2pol_Pipeline_VITIS_LOOP_23_1_Kvalues_ROM_AUTO_1R' using auto ROMs.
 INFO: [RTMG 210-279] Implementing memory 'cordiccart2pol_cordiccart2pol_Pipeline_VITIS_LOOP_23_1_angles_ROM_AUTO_1R' using auto ROMs.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.06 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.13 seconds; current allocated memory: 693.195 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.07 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.21 seconds; current allocated memory: 693.145 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'cordiccart2pol' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -1392,16 +1390,16 @@ INFO: [RTGEN 206-500] Setting interface mode on function 'cordiccart2pol' to 'ap
 INFO: [RTGEN 206-100] Generating core module 'mul_16s_14ns_29_1_1': 1 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'sparsemux_9_3_16_1_1': 1 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'cordiccart2pol'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.14 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.24 seconds; current allocated memory: 693.895 MB.
-INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0.47 seconds. CPU system time: 0.06 seconds. Elapsed time: 0.77 seconds; current allocated memory: 696.727 MB.
-INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0.37 seconds. CPU system time: 0.09 seconds. Elapsed time: 0.62 seconds; current allocated memory: 699.270 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.15 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.37 seconds; current allocated memory: 693.848 MB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0.55 seconds. CPU system time: 0.06 seconds. Elapsed time: 2.22 seconds; current allocated memory: 696.676 MB.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0.52 seconds. CPU system time: 0.09 seconds. Elapsed time: 1.06 seconds; current allocated memory: 699.203 MB.
 INFO: [VHDL 208-304] Generating VHDL RTL for cordiccart2pol.
 INFO: [VLOG 209-307] Generating Verilog RTL for cordiccart2pol.
 INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
 INFO: [HLS 200-789] **** Estimated Fmax: 138.33 MHz
-INFO: [HLS 200-2161] Finished Command csynth_design Elapsed time: 00:00:28; Allocated memory: 56.074 MB.
-INFO: [HLS 200-112] Total CPU user time: 19.65 seconds. Total CPU system time: 3.99 seconds. Total elapsed time: 41.13 seconds; peak allocated memory: 699.270 MB.
-INFO: [vitis-run 60-791] Total elapsed time: 0h 0m 43s
+INFO: [HLS 200-2161] Finished Command csynth_design Elapsed time: 00:00:38; Allocated memory: 56.059 MB.
+INFO: [HLS 200-112] Total CPU user time: 26.25 seconds. Total CPU system time: 4.33 seconds. Total elapsed time: 52.86 seconds; peak allocated memory: 699.207 MB.
+INFO: [vitis-run 60-791] Total elapsed time: 0h 0m 56s
 INFO: [vitis-run 60-1662] Stopping dispatch session having empty uuid.
 cp -f cordiccart2pol.comp/hls/syn/report/cordiccart2pol_csynth.rpt cordiccart2pol_csynth.rpt
 
@@ -1409,7 +1407,7 @@ cp -f cordiccart2pol.comp/hls/syn/report/cordiccart2pol_csynth.rpt cordiccart2po
 ================================================================
 == Vitis HLS Report for 'cordiccart2pol'
 ================================================================
-* Date:           Sat Oct 17 21:51:33 2026
+* Date:           Thu Oct 22 21:20:11 2026
 
 * Version:        2024.2 (Build 5238294 on Nov  8 2024)
 * Project:        cordiccart2pol.comp
@@ -1586,16 +1584,16 @@ cp -f cordiccart2pol.comp/hls/syn/report/cordiccart2pol_csynth.rpt cordiccart2po
 LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu::/home/linux/ieng6/students/519/gam009/xlnx_compat_fix:/home/linux/ieng6/students/519/gam009/xlnx_compat_fix:/home/linux/ieng6/students/519/gam009/xlnx_compat_fix g++ -I/software/common/Xilinx_Vitis/Vitis_HLS/2024.2/bin/../../../Vitis/2024.2/include cordiccart2pol_test.cpp cordiccart2pol.cpp -g -o cordiccart2pol_test.bin
 Running cordiccart2pol_test.bin with cordiccart2pol.cpp
 ---Testing results----------------------------------
-Test: x=0.8147, y=0.1268, golden theta=0.1545, golden r=0.8245, your theta=0.1530, your r=0.8245
-Test: x=0.6322, y=-0.2786, golden theta=-0.4149, golden r=0.6909, your theta=-0.4155, your r=0.6909
-Test: x=-0.5470, y=-0.9575, golden theta=-2.0898, golden r=1.1027, your theta=-2.0907, your r=1.1027
-Test: x=-0.4855, y=0.7002, golden theta=2.1769, golden r=0.8521, your theta=2.1759, your r=0.8522
+Test: x=0.8147, y=0.1268, golden theta=0.1545, golden r=0.8245, your theta=0.1530, your r=0.8246
+Test: x=0.6322, y=-0.2786, golden theta=-0.4149, golden r=0.6909, your theta=-0.4155, your r=0.6910
+Test: x=-0.5470, y=-0.9575, golden theta=-2.0898, golden r=1.1027, your theta=-2.0907, your r=1.1029
+Test: x=-0.4855, y=0.7002, golden theta=2.1769, golden r=0.8521, your theta=2.1759, your r=0.8523
 ---RMS error----------------------------------
 ----------------------------------------------
    RMSE(R)           RMSE(Theta)
-0.000058181449276 0.001089673838578
+0.000171169609530 0.001089673838578
 ----------------------------------------------
-/home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/../../../../../scripts/gen_hls_runner_script.py -c /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/__hls_config__.ini -i cordiccart2pol.cpp -o cordiccart2pol.tcl
+/home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/../../../../scripts/gen_hls_runner_script.py -c /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/__hls_config__.ini -i cordiccart2pol.cpp -o cordiccart2pol.tcl
 sed -i -E \
 	-e 's/^[[:space:]]*set_top[[:space:]]+.*/set_top cordiccart2pol/' \
 	-e 's/^[[:space:]]*open_component[[:space:]]+.*/open_component cordiccart2pol.comp/' \
@@ -1605,15 +1603,15 @@ vitis-run --mode hls --tcl cordiccart2pol.tcl
 
 ****** vitis-run v2024.2 (64-bit)
   **** SW Build 5239630 on 2024-11-10-11:19:46
-  **** Start of session at: Sat Oct 17 21:52:06 2026
+  **** Start of session at: Thu Oct 22 21:20:57 2026
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
     ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 
   **** HLS Build v2024.2 5238294
-Sourcing Tcl script '/home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.tcl'
+Sourcing Tcl script '/home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.tcl'
 INFO: [HLS 200-1510] Running: open_component cordiccart2pol.comp 
-INFO: [HLS 200-10] Creating and opening project '/home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp'.
-INFO: [HLS 200-10] Creating and opening solution '/home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls'.
+INFO: [HLS 200-10] Creating and opening project '/home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp'.
+INFO: [HLS 200-10] Creating and opening solution '/home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls'.
 INFO: [HLS 200-1505] Using default flow_target 'vivado'
 Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
 INFO: [HLS 200-1510] Running: add_files cordiccart2pol.cpp 
@@ -1628,36 +1626,36 @@ Running: set_part xc7z020-clg400-1
 INFO: [HLS 200-1510] Running: create_clock -period 10 
 INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
 INFO: [HLS 200-1510] Running: csynth_design 
-INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.13 seconds. CPU system time: 0.05 seconds. Elapsed time: 7.72 seconds; current allocated memory: 659.199 MB.
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.13 seconds. CPU system time: 0.05 seconds. Elapsed time: 7.76 seconds; current allocated memory: 659.145 MB.
 INFO: [HLS 200-10] Analyzing design file 'cordiccart2pol.cpp' ... 
-INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 6.5 seconds. CPU system time: 1.15 seconds. Elapsed time: 7.9 seconds; current allocated memory: 660.570 MB.
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 7.58 seconds. CPU system time: 1.19 seconds. Elapsed time: 9.83 seconds; current allocated memory: 660.516 MB.
 INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
-INFO: [HLS 200-1995] There were 3,591 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 361 instructions in the design after the 'Unroll/Inline (step 1)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 166 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 107 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 91 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 91 instructions in the design after the 'Array/Struct (step 1)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 91 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 91 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 91 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 95 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 95 instructions in the design after the 'Performance (step 1)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 91 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 91 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 91 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 97 instructions in the design after the 'HW Transforms (step 1)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 104 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 3,591 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 361 instructions in the design after the 'Unroll/Inline (step 1)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 166 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 107 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 91 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 91 instructions in the design after the 'Array/Struct (step 1)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 91 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 91 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 91 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 95 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 95 instructions in the design after the 'Performance (step 1)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 91 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 91 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 91 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 97 instructions in the design after the 'HW Transforms (step 1)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 104 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project2/cordic/HLS/cordic_2c/cordiccart2pol.comp/hls/syn/report/csynth_design_size.rpt
 INFO: [HLS 214-376] automatically set the pipeline for Loop< VITIS_LOOP_23_1> at cordiccart2pol.cpp:23:20 
-INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 4.18 seconds. CPU system time: 1.01 seconds. Elapsed time: 9.7 seconds; current allocated memory: 670.203 MB.
-INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 670.203 MB.
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 4.56 seconds. CPU system time: 0.99 seconds. Elapsed time: 10.28 seconds; current allocated memory: 670.145 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 670.145 MB.
 INFO: [HLS 200-10] Starting code transformations ...
-INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 670.340 MB.
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.02 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.04 seconds; current allocated memory: 670.277 MB.
 INFO: [HLS 200-10] Checking synthesizability ...
-INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 670.355 MB.
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 670.309 MB.
 INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (cordiccart2pol.cpp:7:16) to (cordiccart2pol.cpp:23:38) in function 'cordiccart2pol'... converting 7 basic blocks.
-INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.06 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.07 seconds; current allocated memory: 691.848 MB.
-INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.07 seconds. CPU system time: 0 seconds. Elapsed time: 0.07 seconds; current allocated memory: 692.098 MB.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.05 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.1 seconds; current allocated memory: 691.801 MB.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.06 seconds. CPU system time: 0 seconds. Elapsed time: 0.07 seconds; current allocated memory: 692.094 MB.
 INFO: [HLS 200-10] Starting hardware synthesis ...
 INFO: [HLS 200-10] Synthesizing 'cordiccart2pol' ...
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -1671,25 +1669,25 @@ WARNING: [HLS 200-880] The II Violation in module 'cordiccart2pol_Pipeline_VITIS
 Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-880.html
 INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 3, Depth = 5, loop 'VITIS_LOOP_23_1'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.1 seconds. CPU system time: 0.08 seconds. Elapsed time: 0.21 seconds; current allocated memory: 693.168 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.09 seconds. CPU system time: 0.06 seconds. Elapsed time: 0.22 seconds; current allocated memory: 693.082 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.06 seconds; current allocated memory: 693.168 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.1 seconds; current allocated memory: 693.082 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'cordiccart2pol' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.1 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.12 seconds; current allocated memory: 693.168 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.08 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.11 seconds; current allocated memory: 693.082 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.06 seconds; current allocated memory: 693.168 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.04 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.08 seconds; current allocated memory: 693.082 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'cordiccart2pol_Pipeline_VITIS_LOOP_23_1' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -1698,7 +1696,7 @@ INFO: [RTGEN 206-100] Generating core module 'mul_30ns_16s_45_2_1': 2 instance(s
 INFO: [RTGEN 206-100] Finished creating RTL model for 'cordiccart2pol_Pipeline_VITIS_LOOP_23_1'.
 INFO: [RTMG 210-279] Implementing memory 'cordiccart2pol_cordiccart2pol_Pipeline_VITIS_LOOP_23_1_Kvalues_ROM_AUTO_1R' using auto ROMs.
 INFO: [RTMG 210-279] Implementing memory 'cordiccart2pol_cordiccart2pol_Pipeline_VITIS_LOOP_23_1_angles_ROM_AUTO_1R' using auto ROMs.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.08 seconds. CPU system time: 0 seconds. Elapsed time: 0.13 seconds; current allocated memory: 693.168 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.1 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.29 seconds; current allocated memory: 693.094 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'cordiccart2pol' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -1710,16 +1708,16 @@ INFO: [RTGEN 206-500] Setting interface mode on function 'cordiccart2pol' to 'ap
 INFO: [RTGEN 206-100] Generating core module 'mul_16s_14ns_29_1_1': 1 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'sparsemux_9_3_16_1_1': 1 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'cordiccart2pol'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.18 seconds. CPU system time: 0.03 seconds. Elapsed time: 0.33 seconds; current allocated memory: 693.922 MB.
-INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0.51 seconds. CPU system time: 0.06 seconds. Elapsed time: 0.82 seconds; current allocated memory: 696.785 MB.
-INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0.45 seconds. CPU system time: 0.09 seconds. Elapsed time: 0.72 seconds; current allocated memory: 699.277 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.19 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.38 seconds; current allocated memory: 693.875 MB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0.41 seconds. CPU system time: 0.06 seconds. Elapsed time: 0.82 seconds; current allocated memory: 696.734 MB.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0.44 seconds. CPU system time: 0.06 seconds. Elapsed time: 0.83 seconds; current allocated memory: 699.223 MB.
 INFO: [VHDL 208-304] Generating VHDL RTL for cordiccart2pol.
 INFO: [VLOG 209-307] Generating Verilog RTL for cordiccart2pol.
 INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
 INFO: [HLS 200-789] **** Estimated Fmax: 138.33 MHz
-INFO: [HLS 200-2161] Finished Command csynth_design Elapsed time: 00:00:28; Allocated memory: 56.090 MB.
-INFO: [HLS 200-112] Total CPU user time: 19.58 seconds. Total CPU system time: 3.87 seconds. Total elapsed time: 40.08 seconds; peak allocated memory: 699.289 MB.
-INFO: [vitis-run 60-791] Total elapsed time: 0h 0m 42s
+INFO: [HLS 200-2161] Finished Command csynth_design Elapsed time: 00:00:31; Allocated memory: 56.113 MB.
+INFO: [HLS 200-112] Total CPU user time: 22.37 seconds. Total CPU system time: 4.01 seconds. Total elapsed time: 47.38 seconds; peak allocated memory: 699.258 MB.
+INFO: [vitis-run 60-791] Total elapsed time: 0h 0m 49s
 INFO: [vitis-run 60-1662] Stopping dispatch session having empty uuid.
 cp -f cordiccart2pol.comp/hls/syn/report/cordiccart2pol_csynth.rpt cordiccart2pol_csynth.rpt
 
@@ -1727,7 +1725,7 @@ cp -f cordiccart2pol.comp/hls/syn/report/cordiccart2pol_csynth.rpt cordiccart2po
 ================================================================
 == Vitis HLS Report for 'cordiccart2pol'
 ================================================================
-* Date:           Sat Oct 17 21:52:46 2026
+* Date:           Thu Oct 22 21:21:45 2026
 
 * Version:        2024.2 (Build 5238294 on Nov  8 2024)
 * Project:        cordiccart2pol.comp

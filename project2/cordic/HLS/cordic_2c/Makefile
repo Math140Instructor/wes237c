@@ -86,9 +86,9 @@ FORCE:
 test: $(EXAMPLES_BIN)
 	@set -e; for bin in $(EXAMPLES_BIN); do \
 		echo "Running $$bin with $(SRC)"; \
-		LD_LIBRARY_PATH=$(LD_LIBRARY_PATH) ./$$bin > $(SRC_NAME)_$${bin%.bin}.log 2>&1; \
+		LD_LIBRARY_PATH=$(LD_LIBRARY_PATH) ./$$bin 2>&1 | tee $(SRC_NAME)_$${bin%.bin}.log; \
+		test $${PIPESTATUS[0]} -eq 0 || exit 1; \
 	done
-	@cat $(SRC_NAME)_*.log
 
 $(HLS_TCL): $(SRC) $(HLS_CONFIG_FILE) FORCE
 	$(GEN_TCL) -c $(HLS_CONFIG_FILE) -i $(SRC) -o $@
