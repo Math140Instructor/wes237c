@@ -1,3 +1,9 @@
+# Project 2 
+
+Please see the `cordic` and `phase_detector` folders.
+
+## Below are notes to self
+
 ![alt text](image.png)
 
 make -k test hls report >> README.md 

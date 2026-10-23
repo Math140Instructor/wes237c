@@ -1,4 +1,4 @@
-open_component cordiccart2pol.comp -reset
+open_component cordiccart2pol.comp
 add_files [list cordiccart2pol.cpp]
 add_files -tb [list cordiccart2pol_test.cpp]
 set_top cordiccart2pol
