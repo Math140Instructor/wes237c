@@ -2,6 +2,9 @@
 
 Please see the `cordic` and `phase_detector` folders.
 
+## Demo
+https://drive.google.com/file/d/140KmzKAiCQhyt7QbixA_NSrgLRQSJohS/view?usp=sharing
+
 ## Below are notes to self
 
 ![alt text](image.png)
