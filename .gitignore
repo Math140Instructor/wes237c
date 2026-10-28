@@ -76,3 +76,8 @@
 
 **/vivado*/**
 **/*vivado*/
+
+
+# Ignore previous project directories to safe space on linux cloud ucsd
+**/project1/**
+**/project2/**
