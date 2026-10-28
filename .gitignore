@@ -79,5 +79,6 @@
 
 
 # Ignore previous project directories to safe space on linux cloud ucsd
+**/lab1/**
 **/project1/**
 **/project2/**
