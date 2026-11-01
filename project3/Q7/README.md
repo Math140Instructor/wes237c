@@ -2,7 +2,7 @@ LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu::/home/linux/ieng6/students/519/gam009
 ./dft_test.bin > dft_test.log 2>&1 || { s=$?; echo "./dft_test.bin > dft_test.log failed $s" >&2; exit $s; }
 ----------------------------------------------
    RMSE(R)           RMSE(I)
-0.001853297697380 0.001314980210736
+0.002167032565922 0.005604852456599
 ----------------------------------------------
 *******************************************
 PASS: The output matches the golden output!
@@ -12,7 +12,7 @@ sh /home/linux/ieng6/students/519/gam009/wes237c/scripts/run_checked.sh "dft.com
 
 ****** vitis-run v2024.2 (64-bit)
   **** SW Build 5239630 on 2024-11-10-11:19:46
-  **** Start of session at: Sun Nov  1 12:30:46 2026
+  **** Start of session at: Sun Nov  1 12:49:25 2026
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
     ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 
@@ -37,107 +37,250 @@ Running: set_part xc7z020clg400-1
 INFO: [HLS 200-1510] Running: create_clock -period 10 
 INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
 INFO: [HLS 200-1510] Running: csynth_design 
-INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.14 seconds. CPU system time: 0.04 seconds. Elapsed time: 7.75 seconds; current allocated memory: 659.223 MB.
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.15 seconds. CPU system time: 0.05 seconds. Elapsed time: 7.77 seconds; current allocated memory: 659.223 MB.
 INFO: [HLS 200-10] Analyzing design file 'dft.cpp' ... 
-INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 4.02 seconds. CPU system time: 0.97 seconds. Elapsed time: 5.15 seconds; current allocated memory: 660.562 MB.
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 4.6 seconds. CPU system time: 1 seconds. Elapsed time: 5.77 seconds; current allocated memory: 660.578 MB.
 INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
-INFO: [HLS 200-1995] There were 82 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project3/Q7/dft.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 78 instructions in the design after the 'Unroll/Inline (step 1)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project3/Q7/dft.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 54 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project3/Q7/dft.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 52 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project3/Q7/dft.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 52 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project3/Q7/dft.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 50 instructions in the design after the 'Array/Struct (step 1)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project3/Q7/dft.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 50 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project3/Q7/dft.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 50 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project3/Q7/dft.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 50 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project3/Q7/dft.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 52 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project3/Q7/dft.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 52 instructions in the design after the 'Performance (step 1)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project3/Q7/dft.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 50 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project3/Q7/dft.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 50 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project3/Q7/dft.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 50 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project3/Q7/dft.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 62 instructions in the design after the 'HW Transforms (step 1)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project3/Q7/dft.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 74 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project3/Q7/dft.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 214-376] automatically set the pipeline for Loop< VITIS_LOOP_10_2> at dft.cpp:10:22 
-INFO: [HLS 214-376] automatically set the pipeline for Loop< VITIS_LOOP_23_3> at dft.cpp:23:20 
-INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 3.67 seconds. CPU system time: 0.92 seconds. Elapsed time: 9.14 seconds; current allocated memory: 670.172 MB.
-INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 670.172 MB.
+INFO: [HLS 200-1995] There were 22,099 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project3/Q7/dft.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 1,689 instructions in the design after the 'Unroll/Inline (step 1)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project3/Q7/dft.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 927 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project3/Q7/dft.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 897 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project3/Q7/dft.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 613 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project3/Q7/dft.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 699 instructions in the design after the 'Array/Struct (step 1)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project3/Q7/dft.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 589 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project3/Q7/dft.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 589 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project3/Q7/dft.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 589 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project3/Q7/dft.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 593 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project3/Q7/dft.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 593 instructions in the design after the 'Performance (step 1)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project3/Q7/dft.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 589 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project3/Q7/dft.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 697 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project3/Q7/dft.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 627 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project3/Q7/dft.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 641 instructions in the design after the 'HW Transforms (step 1)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project3/Q7/dft.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 676 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/519/gam009/wes237c/project3/Q7/dft.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 214-178] Inlining function 'fp_struct<double>::fp_struct(double)' into 'void range_redux_payne_hanek_hotbm<61, double, 63, 63>(double, ap_uint<3>&, ap_ufixed<63, 0, (ap_q_mode)5, (ap_o_mode)3, 0>&, ap_ufixed<63, 0, (ap_q_mode)5, (ap_o_mode)3, 0>&, ap_int<fp_struct<double>::EXP_BITS>&)' (/wrk/ci/prod/2024.2/hls_product/continuous/495/2024.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_range_redux.h:437:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<double>::expv() const' into 'void range_redux_payne_hanek_hotbm<61, double, 63, 63>(double, ap_uint<3>&, ap_ufixed<63, 0, (ap_q_mode)5, (ap_o_mode)3, 0>&, ap_ufixed<63, 0, (ap_q_mode)5, (ap_o_mode)3, 0>&, ap_int<fp_struct<double>::EXP_BITS>&)' (/wrk/ci/prod/2024.2/hls_product/continuous/495/2024.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_range_redux.h:437:0)
+INFO: [HLS 214-178] Inlining function 'ap_uint<(((2) * ((52) + (1))) + (61)) + (3)> table_lookup_4oPi_hotbm<52, 61>(int, double)' into 'void range_redux_payne_hanek_hotbm<61, double, 63, 63>(double, ap_uint<3>&, ap_ufixed<63, 0, (ap_q_mode)5, (ap_o_mode)3, 0>&, ap_ufixed<63, 0, (ap_q_mode)5, (ap_o_mode)3, 0>&, ap_int<fp_struct<double>::EXP_BITS>&)' (/wrk/ci/prod/2024.2/hls_product/continuous/495/2024.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_range_redux.h:437:0)
+INFO: [HLS 214-178] Inlining function 'unsigned int clz<61, 124, 0>(ap_ufixed<124, 0, (ap_q_mode)5, (ap_o_mode)3, 0>)' into 'void range_redux_payne_hanek_hotbm<61, double, 63, 63>(double, ap_uint<3>&, ap_ufixed<63, 0, (ap_q_mode)5, (ap_o_mode)3, 0>&, ap_ufixed<63, 0, (ap_q_mode)5, (ap_o_mode)3, 0>&, ap_int<fp_struct<double>::EXP_BITS>&)' (/wrk/ci/prod/2024.2/hls_product/continuous/495/2024.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_range_redux.h:437:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<double>::data() const (.47.56.67.76)' into 'fp_struct<double>::to_double() const (.44.53.64.73)' (/wrk/ci/prod/2024.2/hls_product/continuous/495/2024.2/src/shared/hls/clib/src/hls/utils/x_hls_utils.h:494:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<double>::to_double() const (.44.53.64.73)' into 'fp_struct<double>::to_ieee() const' (/wrk/ci/prod/2024.2/hls_product/continuous/495/2024.2/src/shared/hls/clib/src/hls/utils/x_hls_utils.h:509:0)
+INFO: [HLS 214-178] Inlining function 'clz(int) (.39412)' into 'void scaled_fixed2ieee<63, 1>(ap_ufixed<63, 1, (ap_q_mode)5, (ap_o_mode)3, 0>, double&, int)' (/wrk/ci/prod/2024.2/hls_product/continuous/495/2024.2/src/shared/hls/clib/src/hls/utils/x_hls_float_utils.h:390:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<double>::set_mantissa(ap_ufixed<53, 1, (ap_q_mode)5, (ap_o_mode)3, 0>)' into 'void scaled_fixed2ieee<63, 1>(ap_ufixed<63, 1, (ap_q_mode)5, (ap_o_mode)3, 0>, double&, int)' (/wrk/ci/prod/2024.2/hls_product/continuous/495/2024.2/src/shared/hls/clib/src/hls/utils/x_hls_float_utils.h:390:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<double>::to_ieee() const' into 'void scaled_fixed2ieee<63, 1>(ap_ufixed<63, 1, (ap_q_mode)5, (ap_o_mode)3, 0>, double&, int)' (/wrk/ci/prod/2024.2/hls_product/continuous/495/2024.2/src/shared/hls/clib/src/hls/utils/x_hls_float_utils.h:390:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<double>::fp_struct(double)' into 'double hotbm_::sin_or_cos<double>(double, bool, bool)' (/wrk/ci/prod/2024.2/hls_product/continuous/495/2024.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_hotbm.h:210:0)
+INFO: [HLS 214-178] Inlining function 'void range_redux_payne_hanek_hotbm<61, double, 63, 63>(double, ap_uint<3>&, ap_ufixed<63, 0, (ap_q_mode)5, (ap_o_mode)3, 0>&, ap_ufixed<63, 0, (ap_q_mode)5, (ap_o_mode)3, 0>&, ap_int<fp_struct<double>::EXP_BITS>&)' into 'double hotbm_::sin_or_cos<double>(double, bool, bool)' (/wrk/ci/prod/2024.2/hls_product/continuous/495/2024.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_hotbm.h:210:0)
+INFO: [HLS 214-178] Inlining function 'ap_ufixed<63, 1, (ap_q_mode)5, (ap_o_mode)3, 0> hotbm_::value_list<double>::sin_or_cos_approximation<63, 63>(bool, ap_uint<3>&, ap_ufixed<63, 0, (ap_q_mode)5, (ap_o_mode)3, 0>&, ap_ufixed<63, 0, (ap_q_mode)5, (ap_o_mode)3, 0>&, ap_int<11>&)' into 'double hotbm_::sin_or_cos<double>(double, bool, bool)' (/wrk/ci/prod/2024.2/hls_product/continuous/495/2024.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_hotbm.h:210:0)
+INFO: [HLS 214-178] Inlining function 'void scaled_fixed2ieee<63, 1>(ap_ufixed<63, 1, (ap_q_mode)5, (ap_o_mode)3, 0>, double&, int)' into 'double hotbm_::sin_or_cos<double>(double, bool, bool)' (/wrk/ci/prod/2024.2/hls_product/continuous/495/2024.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_hotbm.h:210:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<double>::to_ieee() const' into 'double hotbm_::sin_or_cos<double>(double, bool, bool)' (/wrk/ci/prod/2024.2/hls_product/continuous/495/2024.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_hotbm.h:210:0)
+INFO: [HLS 214-178] Inlining function 'hotbm_::cos(double)' into 'cos' (/wrk/ci/prod/2024.2/hls_product/continuous/495/2024.2/src/shared/hls/clib/hlsmath/src/c/sincosdouble.cpp:12:0)
+INFO: [HLS 214-178] Inlining function 'hotbm_::sin(double)' into 'sin' (/wrk/ci/prod/2024.2/hls_product/continuous/495/2024.2/src/shared/hls/clib/hlsmath/src/c/sincosdouble.cpp:7:0)
+INFO: [HLS 214-178] Inlining function 'cos' into 'dft(float*, float*, float*, float*)' (dft.cpp:6:0)
+INFO: [HLS 214-178] Inlining function 'sin' into 'dft(float*, float*, float*, float*)' (dft.cpp:6:0)
+INFO: [HLS 214-248] Applying array_partition to '_ZZN6hotbm_10value_listIdE24sin_or_cos_approximationILi63ELi63EEE9ap_ufixedIXT_ELi1EL9ap_q_mode5EL9ap_o_mode3ELi0EEbR7ap_uintILi3EERS3_IXT_ELi0ELS4_5ELS5_3ELi0EERS3_IXT0_ELi0ELS4_5ELS5_3ELi0EER6ap_intILi11EEE10swap_table': Complete partitioning on dimension 1. (/wrk/ci/prod/2024.2/hls_product/continuous/495/2024.2/src/shared/hls/clib/hlsmath/src/common/hls_hotbm_double.cpp:14:0)
+INFO: [HLS 214-248] Applying array_partition to '_ZZN6hotbm_10sin_or_cosIdEET_S1_bbE13neg_cos_table': Complete partitioning on dimension 1. (/wrk/ci/prod/2024.2/hls_product/continuous/495/2024.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_hotbm.h:217:0)
+INFO: [HLS 214-248] Applying array_partition to '_ZZN6hotbm_10sin_or_cosIdEET_S1_bbE13neg_sin_table': Complete partitioning on dimension 1. (/wrk/ci/prod/2024.2/hls_product/continuous/495/2024.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_hotbm.h:216:0)
+INFO: [HLS 214-248] Applying array_partition to '_ZZN6hotbm_10sin_or_cosIdEET_S1_bbE10swap_table': Complete partitioning on dimension 1. (/wrk/ci/prod/2024.2/hls_product/continuous/495/2024.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_hotbm.h:215:0)
+WARNING: [HLS 214-358] Array transformation on index using bit extension logic may lead to poor performance. Please use int or long for array index computation to benefit from optimizations. (/wrk/ci/prod/2024.2/hls_product/continuous/495/2024.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_hotbm.h:242:30)
+WARNING: [HLS 214-358] Array transformation on index using bit extension logic may lead to poor performance. Please use int or long for array index computation to benefit from optimizations. (/wrk/ci/prod/2024.2/hls_product/continuous/495/2024.2/src/shared/hls/clib/hlsmath/src/common/hls_hotbm_double.cpp:29:67)
+WARNING: [HLS 214-358] Array transformation on index using bit extension logic may lead to poor performance. Please use int or long for array index computation to benefit from optimizations. (/wrk/ci/prod/2024.2/hls_product/continuous/495/2024.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_hotbm.h:267:8)
+INFO: [HLS 214-376] automatically set the pipeline for Loop< unknown> at /wrk/ci/prod/2024.2/hls_product/continuous/495/2024.2/src/shared/hls/clib/src/hls/utils/x_hls_float_utils.h:421:5 
+INFO: [HLS 214-376] automatically set the pipeline for Loop< unknown> at /wrk/ci/prod/2024.2/hls_product/continuous/495/2024.2/src/shared/hls/clib/src/hls/utils/x_hls_float_utils.h:414:5 
+INFO: [HLS 214-376] automatically set the pipeline for Loop< unknown> at /wrk/ci/prod/2024.2/hls_product/continuous/495/2024.2/src/shared/hls/clib/src/hls/utils/x_hls_float_utils.h:401:5 
+INFO: [HLS 214-376] automatically set the pipeline for Loop< unknown> at /wrk/ci/prod/2024.2/hls_product/continuous/495/2024.2/src/shared/hls/clib/src/hls/utils/x_hls_float_utils.h:400:41 
+INFO: [HLS 214-376] automatically set the pipeline for Loop< VITIS_LOOP_8_1> at dft.cpp:8:19 
+INFO: [HLS 214-376] automatically set the pipeline for Loop< VITIS_LOOP_26_4> at dft.cpp:26:20 
+INFO: [HLS 214-421] Automatically partitioning small array 'out_bits' completely based on array size. (/wrk/ci/prod/2024.2/hls_product/continuous/495/2024.2/src/shared/hls/clib/src/hls/utils/x_hls_float_utils.h:400:17)
+INFO: [HLS 214-421] Automatically partitioning small array 'c' completely based on array size. (/wrk/ci/prod/2024.2/hls_product/continuous/495/2024.2/src/shared/hls/clib/src/hls/utils/x_hls_float_utils.h:413:9)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'out_bits.i' due to pipeline pragma (/wrk/ci/prod/2024.2/hls_product/continuous/495/2024.2/src/shared/hls/clib/src/hls/utils/x_hls_float_utils.h:400:17)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'c.i' due to pipeline pragma (/wrk/ci/prod/2024.2/hls_product/continuous/495/2024.2/src/shared/hls/clib/src/hls/utils/x_hls_float_utils.h:413:9)
+INFO: [HLS 214-248] Applying array_partition to 'out_bits.i': Complete partitioning on dimension 1. (/wrk/ci/prod/2024.2/hls_product/continuous/495/2024.2/src/shared/hls/clib/src/hls/utils/x_hls_float_utils.h:400:17)
+INFO: [HLS 214-248] Applying array_partition to 'c.i': Complete partitioning on dimension 1. (/wrk/ci/prod/2024.2/hls_product/continuous/495/2024.2/src/shared/hls/clib/src/hls/utils/x_hls_float_utils.h:413:9)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 5.38 seconds. CPU system time: 1.23 seconds. Elapsed time: 10.34 seconds; current allocated memory: 671.621 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 671.621 MB.
 INFO: [HLS 200-10] Starting code transformations ...
-INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.01 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.03 seconds; current allocated memory: 670.273 MB.
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.06 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.08 seconds; current allocated memory: 674.543 MB.
 INFO: [HLS 200-10] Checking synthesizability ...
-INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 670.281 MB.
-INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.05 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.07 seconds; current allocated memory: 691.301 MB.
-INFO: [HLS 200-2061] Successfully converted nested loops 'VITIS_LOOP_6_1'(dft.cpp:6:19) and 'VITIS_LOOP_10_2'(dft.cpp:10:22) in function 'dft' into perfectly nested loops.
-INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_6_1' (dft.cpp:6:19) in function 'dft'.
-INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.06 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.08 seconds; current allocated memory: 701.188 MB.
+WARNING: [SYNCHK 200-23] /wrk/ci/prod/2024.2/hls_product/continuous/495/2024.2/src/shared/hls/clib/src/hls/utils/x_hls_float_utils.h:403: variable-indexed range selection may cause suboptimal QoR.
+INFO: [SYNCHK 200-10] 0 error(s), 1 warning(s).
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.06 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.09 seconds; current allocated memory: 678.191 MB.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (/wrk/ci/prod/2024.2/hls_product/continuous/495/2024.2/src/shared/hls/clib/src/hls/utils/x_hls_float_utils.h:400:17) to (/wrk/ci/prod/2024.2/hls_product/continuous/495/2024.2/src/shared/hls/clib/src/hls/utils/x_hls_float_utils.h:400:41) in function 'hotbm_::sin_or_cos<double>'... converting 5 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (/wrk/ci/prod/2024.2/hls_product/continuous/495/2024.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_hotbm.h:209:18) to (/wrk/ci/prod/2024.2/hls_product/continuous/495/2024.2/src/shared/hls/clib/src/hls/utils/x_hls_float_utils.h:400:41) in function 'hotbm_::sin_or_cos<double>'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (/wrk/ci/prod/2024.2/hls_product/continuous/495/2024.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_hotbm.h:252:40) to (/wrk/ci/prod/2024.2/hls_product/continuous/495/2024.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_hotbm.h:287:5) in function 'hotbm_::sin_or_cos<double>'... converting 9 basic blocks.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.16 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.21 seconds; current allocated memory: 702.781 MB.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.16 seconds. CPU system time: 0.03 seconds. Elapsed time: 0.2 seconds; current allocated memory: 763.410 MB.
 INFO: [HLS 200-10] Starting hardware synthesis ...
 INFO: [HLS 200-10] Synthesizing 'dft' ...
+WARNING: [SYN 201-103] Legalizing function name 'sin_or_cos<double>_Pipeline_1' to 'sin_or_cos_double_Pipeline_1'.
+WARNING: [SYN 201-103] Legalizing function name 'sin_or_cos<double>_Pipeline_2' to 'sin_or_cos_double_Pipeline_2'.
+WARNING: [SYN 201-103] Legalizing function name 'sin_or_cos<double>_Pipeline_3' to 'sin_or_cos_double_Pipeline_3'.
+WARNING: [SYN 201-103] Legalizing function name 'sin_or_cos<double>_Pipeline_4' to 'sin_or_cos_double_Pipeline_4'.
+WARNING: [SYN 201-103] Legalizing function name 'sin_or_cos<double>' to 'sin_or_cos_double_s'.
 INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-42] -- Implementing module 'dft_Pipeline_VITIS_LOOP_6_1_VITIS_LOOP_10_2' 
+INFO: [HLS 200-42] -- Implementing module 'dft_Pipeline_VITIS_LOOP_8_1' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
-INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_6_1_VITIS_LOOP_10_2'.
-WARNING: [HLS 200-880] The II Violation in module 'dft_Pipeline_VITIS_LOOP_6_1_VITIS_LOOP_10_2' (loop 'VITIS_LOOP_6_1_VITIS_LOOP_10_2'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 0) between 'store' operation 0 bit ('add4_write_ln17', dft.cpp:17) of variable 'add', dft.cpp:17 on local variable 'add4' and 'load' operation 32 bit ('add4_load', dft.cpp:6) on local variable 'add4'.
-Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-880.html
-WARNING: [HLS 200-880] The II Violation in module 'dft_Pipeline_VITIS_LOOP_6_1_VITIS_LOOP_10_2' (loop 'VITIS_LOOP_6_1_VITIS_LOOP_10_2'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 0) between 'store' operation 0 bit ('add4_write_ln17', dft.cpp:17) of variable 'add', dft.cpp:17 on local variable 'add4' and 'load' operation 32 bit ('add4_load', dft.cpp:6) on local variable 'add4'.
-Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-880.html
-WARNING: [HLS 200-880] The II Violation in module 'dft_Pipeline_VITIS_LOOP_6_1_VITIS_LOOP_10_2' (loop 'VITIS_LOOP_6_1_VITIS_LOOP_10_2'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 0) between 'store' operation 0 bit ('add4_write_ln17', dft.cpp:17) of variable 'add', dft.cpp:17 on local variable 'add4' and 'load' operation 32 bit ('add4_load', dft.cpp:6) on local variable 'add4'.
-Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-880.html
-WARNING: [HLS 200-880] The II Violation in module 'dft_Pipeline_VITIS_LOOP_6_1_VITIS_LOOP_10_2' (loop 'VITIS_LOOP_6_1_VITIS_LOOP_10_2'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 0) between 'store' operation 0 bit ('add4_write_ln17', dft.cpp:17) of variable 'add', dft.cpp:17 on local variable 'add4' and 'load' operation 32 bit ('add4_load', dft.cpp:6) on local variable 'add4'.
-Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-880.html
-WARNING: [HLS 200-880] The II Violation in module 'dft_Pipeline_VITIS_LOOP_6_1_VITIS_LOOP_10_2' (loop 'VITIS_LOOP_6_1_VITIS_LOOP_10_2'): Unable to enforce a carried dependence constraint (II = 5, distance = 1, offset = 0) between 'store' operation 0 bit ('add4_write_ln17', dft.cpp:17) of variable 'add', dft.cpp:17 on local variable 'add4' and 'load' operation 32 bit ('add4_load', dft.cpp:6) on local variable 'add4'.
-Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-880.html
-INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 6, Depth = 22, loop 'VITIS_LOOP_6_1_VITIS_LOOP_10_2'
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_8_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 1, loop 'VITIS_LOOP_8_1'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.12 seconds. CPU system time: 0.06 seconds. Elapsed time: 0.25 seconds; current allocated memory: 702.184 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.08 seconds. CPU system time: 0.08 seconds. Elapsed time: 0.26 seconds; current allocated memory: 764.344 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.05 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.07 seconds; current allocated memory: 702.184 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.04 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.08 seconds; current allocated memory: 764.344 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-42] -- Implementing module 'dft_Pipeline_VITIS_LOOP_23_3' 
+INFO: [HLS 200-42] -- Implementing module 'sin_or_cos_double_Pipeline_1' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
-INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_23_3'.
-INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 2, loop 'VITIS_LOOP_23_3'
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 1, loop 'Loop 1'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.06 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.11 seconds; current allocated memory: 702.184 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.07 seconds. CPU system time: 0 seconds. Elapsed time: 0.12 seconds; current allocated memory: 764.367 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.06 seconds; current allocated memory: 702.184 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.04 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.07 seconds; current allocated memory: 764.367 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'sin_or_cos_double_Pipeline_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 1, loop 'Loop 1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.07 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.13 seconds; current allocated memory: 764.383 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.09 seconds; current allocated memory: 764.383 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'sin_or_cos_double_Pipeline_3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 1, loop 'Loop 1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.08 seconds. CPU system time: 0 seconds. Elapsed time: 0.12 seconds; current allocated memory: 764.383 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.04 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.08 seconds; current allocated memory: 764.383 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'sin_or_cos_double_Pipeline_4' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+WARNING: [HLS 200-880] The II Violation in module 'sin_or_cos_double_Pipeline_4' (loop 'Loop 1'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between 'store' operation 0 bit ('in_shift_1_write_ln419', /wrk/ci/prod/2024.2/hls_product/continuous/495/2024.2/src/shared/hls/clib/src/hls/utils/x_hls_float_utils.h:419->/wrk/ci/prod/2024.2/hls_product/continuous/495/2024.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_hotbm.h:252) of variable 'in_shift', /wrk/ci/prod/2024.2/hls_product/continuous/495/2024.2/src/shared/hls/clib/src/hls/utils/x_hls_float_utils.h:423->/wrk/ci/prod/2024.2/hls_product/continuous/495/2024.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_hotbm.h:252 on local variable 'in_shift', /wrk/ci/prod/2024.2/hls_product/continuous/495/2024.2/src/shared/hls/clib/src/hls/utils/x_hls_float_utils.h:419->/wrk/ci/prod/2024.2/hls_product/continuous/495/2024.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_hotbm.h:252 and 'select' operation 63 bit ('in_shift', /wrk/ci/prod/2024.2/hls_product/continuous/495/2024.2/src/shared/hls/clib/src/hls/utils/x_hls_float_utils.h:423->/wrk/ci/prod/2024.2/hls_product/continuous/495/2024.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_hotbm.h:252).
+Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-880.html
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 2, Depth = 3, loop 'Loop 1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.09 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.16 seconds; current allocated memory: 764.535 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.03 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.07 seconds; current allocated memory: 764.535 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'sin_or_cos_double_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.14 seconds. CPU system time: 0 seconds. Elapsed time: 0.18 seconds; current allocated memory: 766.031 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.08 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.12 seconds; current allocated memory: 766.031 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'dft_Pipeline_VITIS_LOOP_26_4' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_26_4'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 2, loop 'VITIS_LOOP_26_4'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.08 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.15 seconds; current allocated memory: 766.633 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.05 seconds. CPU system time: 0 seconds. Elapsed time: 0.08 seconds; current allocated memory: 766.633 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'dft' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.04 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.08 seconds; current allocated memory: 702.184 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.08 seconds. CPU system time: 0 seconds. Elapsed time: 0.12 seconds; current allocated memory: 767.078 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.07 seconds; current allocated memory: 702.184 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.06 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.1 seconds; current allocated memory: 767.078 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-10] -- Generating RTL for module 'dft_Pipeline_VITIS_LOOP_6_1_VITIS_LOOP_10_2' 
+INFO: [HLS 200-10] -- Generating RTL for module 'dft_Pipeline_VITIS_LOOP_8_1' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'dft_Pipeline_VITIS_LOOP_6_1_VITIS_LOOP_10_2' pipeline 'VITIS_LOOP_6_1_VITIS_LOOP_10_2' pipeline type 'loop pipeline'
-INFO: [RTGEN 206-100] Generating core module 'faddfsub_32ns_32ns_32_5_full_dsp_1': 1 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_4_max_dsp_1': 1 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'mul_10s_10s_10_1_1': 1 instance(s).
-INFO: [RTGEN 206-100] Finished creating RTL model for 'dft_Pipeline_VITIS_LOOP_6_1_VITIS_LOOP_10_2'.
-INFO: [RTMG 210-279] Implementing memory 'dft_dft_Pipeline_VITIS_LOOP_6_1_VITIS_LOOP_10_2_cos_coefficients_table_ROM_AUTO_1R' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'dft_dft_Pipeline_VITIS_LOOP_6_1_VITIS_LOOP_10_2_sin_coefficients_table_ROM_AUTO_1R' using auto ROMs.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.11 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.23 seconds; current allocated memory: 702.188 MB.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dft_Pipeline_VITIS_LOOP_8_1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.06 seconds. CPU system time: 0 seconds. Elapsed time: 0.11 seconds; current allocated memory: 767.141 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-10] -- Generating RTL for module 'dft_Pipeline_VITIS_LOOP_23_3' 
+INFO: [HLS 200-10] -- Generating RTL for module 'sin_or_cos_double_Pipeline_1' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'dft_Pipeline_VITIS_LOOP_23_3' pipeline 'VITIS_LOOP_23_3' pipeline type 'loop pipeline'
-INFO: [RTGEN 206-100] Finished creating RTL model for 'dft_Pipeline_VITIS_LOOP_23_3'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.14 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.22 seconds; current allocated memory: 702.727 MB.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'sin_or_cos_double_Pipeline_1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.1 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.17 seconds; current allocated memory: 767.758 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'sin_or_cos_double_Pipeline_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'partselect_16ns_63ns_32ns_16_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'sin_or_cos_double_Pipeline_2'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.1 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.18 seconds; current allocated memory: 768.598 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'sin_or_cos_double_Pipeline_3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'ctlz_32_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_9_2_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'sin_or_cos_double_Pipeline_3'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.11 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.21 seconds; current allocated memory: 769.613 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'sin_or_cos_double_Pipeline_4' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'sin_or_cos_double_Pipeline_4' pipeline 'Loop 1' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_9_2_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'sin_or_cos_double_Pipeline_4'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.12 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.21 seconds; current allocated memory: 770.789 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'sin_or_cos_double_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'ctlz_62_62_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_170s_53ns_170_5_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_35ns_25ns_60_2_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_42ns_33ns_75_2_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_49ns_44s_93_5_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_49ns_49ns_98_5_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_56ns_52s_108_5_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_64s_63ns_126_5_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_17_3_1_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_33_4_1_1_1': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'sin_or_cos_double_s'.
+INFO: [RTMG 210-279] Implementing memory 'dft_sin_or_cos_double_s_ref_4oPi_table_256_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dft_sin_or_cos_double_s_fourth_order_double_sin_cos_K0_ROM_1P_LUTRAM_1R' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dft_sin_or_cos_double_s_fourth_order_double_sin_cos_K1_ROM_1P_LUTRAM_1R' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dft_sin_or_cos_double_s_fourth_order_double_sin_cos_K2_ROM_1P_LUTRAM_1R' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dft_sin_or_cos_double_s_fourth_order_double_sin_cos_K3_ROM_1P_LUTRAM_1R' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dft_sin_or_cos_double_s_fourth_order_double_sin_cos_K4_ROM_1P_LUTRAM_1R' using distributed ROMs.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.23 seconds. CPU system time: 0.04 seconds. Elapsed time: 0.5 seconds; current allocated memory: 774.918 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dft_Pipeline_VITIS_LOOP_26_4' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'dft_Pipeline_VITIS_LOOP_26_4' pipeline 'VITIS_LOOP_26_4' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dft_Pipeline_VITIS_LOOP_26_4'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.28 seconds. CPU system time: 0.04 seconds. Elapsed time: 0.4 seconds; current allocated memory: 777.543 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'dft' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -146,17 +289,23 @@ INFO: [RTGEN 206-500] Setting interface mode on port 'dft/imag_sample' to 'ap_me
 INFO: [RTGEN 206-500] Setting interface mode on port 'dft/real_op' to 'ap_memory'.
 INFO: [RTGEN 206-500] Setting interface mode on port 'dft/imag_op' to 'ap_memory'.
 INFO: [RTGEN 206-500] Setting interface mode on function 'dft' to 'ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Generating core module 'dadd_64ns_64ns_64_7_full_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'dadddsub_64ns_64ns_64_7_full_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'dmul_64ns_64ns_64_7_max_dsp_1': 4 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fpext_32ns_64_2_no_dsp_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fptrunc_64ns_32_2_no_dsp_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sitodp_32ns_64_6_no_dsp_1': 1 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'dft'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.08 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.16 seconds; current allocated memory: 703.582 MB.
-INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0.28 seconds. CPU system time: 0.11 seconds. Elapsed time: 0.7 seconds; current allocated memory: 706.508 MB.
-INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0.48 seconds. CPU system time: 0.09 seconds. Elapsed time: 0.76 seconds; current allocated memory: 709.180 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.16 seconds. CPU system time: 0.03 seconds. Elapsed time: 0.37 seconds; current allocated memory: 780.438 MB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0.48 seconds. CPU system time: 0.25 seconds. Elapsed time: 1.73 seconds; current allocated memory: 783.043 MB.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0.64 seconds. CPU system time: 0.09 seconds. Elapsed time: 0.97 seconds; current allocated memory: 787.953 MB.
 INFO: [VHDL 208-304] Generating VHDL RTL for dft.
 INFO: [VLOG 209-307] Generating Verilog RTL for dft.
-INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
-INFO: [HLS 200-789] **** Estimated Fmax: 137.82 MHz
-INFO: [HLS 200-2161] Finished Command csynth_design Elapsed time: 00:00:25; Allocated memory: 65.992 MB.
-INFO: [HLS 200-112] Total CPU user time: 16.91 seconds. Total CPU system time: 4.06 seconds. Total elapsed time: 39.58 seconds; peak allocated memory: 709.215 MB.
-INFO: [vitis-run 60-791] Total elapsed time: 0h 0m 41s
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 137.04 MHz
+INFO: [HLS 200-2161] Finished Command csynth_design Elapsed time: 00:00:31; Allocated memory: 145.086 MB.
+INFO: [HLS 200-112] Total CPU user time: 20.93 seconds. Total CPU system time: 4.64 seconds. Total elapsed time: 44.34 seconds; peak allocated memory: 788.309 MB.
+INFO: [vitis-run 60-791] Total elapsed time: 0h 0m 46s
 INFO: [vitis-run 60-1662] Stopping dispatch session having empty uuid.
 touch dft.comp/.csynth
 cp -f dft.comp/hls/syn/report/dft_csynth.rpt /home/linux/ieng6/students/519/gam009/wes237c/project3/Q7
@@ -165,7 +314,7 @@ cp -f dft.comp/hls/syn/report/dft_csynth.rpt /home/linux/ieng6/students/519/gam0
 ================================================================
 == Vitis HLS Report for 'dft'
 ================================================================
-* Date:           Sun Nov  1 12:31:26 2026
+* Date:           Sun Nov  1 12:50:09 2026
 
 * Version:        2024.2 (Build 5238294 on Nov  8 2024)
 * Project:        dft.comp
@@ -182,30 +331,38 @@ cp -f dft.comp/hls/syn/report/dft_csynth.rpt /home/linux/ieng6/students/519/gam0
     +--------+----------+----------+------------+
     |  Clock |  Target  | Estimated| Uncertainty|
     +--------+----------+----------+------------+
-    |ap_clk  |  10.00 ns|  7.256 ns|     2.70 ns|
+    |ap_clk  |  10.00 ns|  7.297 ns|     2.70 ns|
     +--------+----------+----------+------------+
 
 + Latency: 
     * Summary: 
-    +---------+---------+-----------+-----------+---------+---------+---------+
-    |  Latency (cycles) |   Latency (absolute)  |      Interval     | Pipeline|
-    |   min   |   max   |    min    |    max    |   min   |   max   |   Type  |
-    +---------+---------+-----------+-----------+---------+---------+---------+
-    |  6292502|  6292502|  62.925 ms|  62.925 ms|  6292503|  6292503|       no|
-    +---------+---------+-----------+-----------+---------+---------+---------+
+    +-----------+-----------+-----------+-----------+-----------+-----------+---------+
+    |    Latency (cycles)   |   Latency (absolute)  |        Interval       | Pipeline|
+    |    min    |    max    |    min    |    max    |    min    |    max    |   Type  |
+    +-----------+-----------+-----------+-----------+-----------+-----------+---------+
+    |  114304007|  120595463|  1.143 sec|  1.206 sec|  114304008|  120595464|       no|
+    +-----------+-----------+-----------+-----------+-----------+-----------+---------+
 
     + Detail: 
         * Instance: 
-        +-------------------------------------------------------+---------------------------------------------+---------+---------+-----------+-----------+---------+---------+------------------------------------------------+
-        |                                                       |                                             |  Latency (cycles) |   Latency (absolute)  |      Interval     |                    Pipeline                    |
-        |                        Instance                       |                    Module                   |   min   |   max   |    min    |    max    |   min   |   max   |                      Type                      |
-        +-------------------------------------------------------+---------------------------------------------+---------+---------+-----------+-----------+---------+---------+------------------------------------------------+
-        |grp_dft_Pipeline_VITIS_LOOP_6_1_VITIS_LOOP_10_2_fu_32  |dft_Pipeline_VITIS_LOOP_6_1_VITIS_LOOP_10_2  |  6291473|  6291473|  62.915 ms|  62.915 ms|  6291462|  6291462|  loop auto-rewind stp (delay=0 clock cycles(s))|
-        |grp_dft_Pipeline_VITIS_LOOP_23_3_fu_48                 |dft_Pipeline_VITIS_LOOP_23_3                 |     1026|     1026|  10.260 us|  10.260 us|     1025|     1025|  loop auto-rewind stp (delay=0 clock cycles(s))|
-        +-------------------------------------------------------+---------------------------------------------+---------+---------+-----------+-----------+---------+---------+------------------------------------------------+
+        +-----------------------------------------+------------------------------+---------+---------+-----------+-----------+------+------+------------------------------------------------+
+        |                                         |                              |  Latency (cycles) |   Latency (absolute)  |   Interval  |                    Pipeline                    |
+        |                 Instance                |            Module            |   min   |   max   |    min    |    max    |  min |  max |                      Type                      |
+        +-----------------------------------------+------------------------------+---------+---------+-----------+-----------+------+------+------------------------------------------------+
+        |grp_dft_Pipeline_VITIS_LOOP_8_1_fu_144   |dft_Pipeline_VITIS_LOOP_8_1   |     1026|     1026|  10.260 us|  10.260 us|  1025|  1025|  loop auto-rewind stp (delay=0 clock cycles(s))|
+        |grp_dft_Pipeline_VITIS_LOOP_26_4_fu_152  |dft_Pipeline_VITIS_LOOP_26_4  |     1026|     1026|  10.260 us|  10.260 us|  1025|  1025|  loop auto-rewind stp (delay=0 clock cycles(s))|
+        |grp_sin_or_cos_double_s_fu_164           |sin_or_cos_double_s           |       56|       62|   0.560 us|   0.620 us|    56|    62|                                              no|
+        |grp_sin_or_cos_double_s_fu_183           |sin_or_cos_double_s           |       56|       62|   0.560 us|   0.620 us|    56|    62|                                              no|
+        +-----------------------------------------+------------------------------+---------+---------+-----------+-----------+------+------+------------------------------------------------+
 
         * Loop: 
-        N/A
+        +--------------------+-----------+-----------+-----------------+-----------+-----------+------+----------+
+        |                    |    Latency (cycles)   |    Iteration    |  Initiation Interval  | Trip |          |
+        |      Loop Name     |    min    |    max    |     Latency     |  achieved |   target  | Count| Pipelined|
+        +--------------------+-----------+-----------+-----------------+-----------+-----------+------+----------+
+        |- VITIS_LOOP_14_2   |  114301952|  120593408|  111623 ~ 117767|          -|          -|  1024|        no|
+        | + VITIS_LOOP_15_3  |     111616|     117760|        109 ~ 115|          -|          -|  1024|        no|
+        +--------------------+-----------+-----------+-----------------+-----------+-----------+------+----------+
 
 
 
@@ -217,30 +374,43 @@ cp -f dft.comp/hls/syn/report/dft_csynth.rpt /home/linux/ieng6/students/519/gam0
 |       Name      | BRAM_18K| DSP |   FF   |  LUT  | URAM|
 +-----------------+---------+-----+--------+-------+-----+
 |DSP              |        -|    -|       -|      -|    -|
-|Expression       |        -|    -|       -|      -|    -|
+|Expression       |        -|    -|       0|     56|    -|
 |FIFO             |        -|    -|       -|      -|    -|
-|Instance         |        4|    5|    1241|   1432|    -|
+|Instance         |       16|  220|   13790|  17467|    -|
 |Memory           |        -|    -|       -|      -|    -|
-|Multiplexer      |        -|    -|       0|    173|    -|
-|Register         |        -|    -|       6|      -|    -|
+|Multiplexer      |        -|    -|       0|    623|    -|
+|Register         |        -|    -|    1218|      -|    -|
 +-----------------+---------+-----+--------+-------+-----+
-|Total            |        4|    5|    1247|   1605|    0|
+|Total            |       16|  220|   15008|  18146|    0|
 +-----------------+---------+-----+--------+-------+-----+
 |Available        |      280|  220|  106400|  53200|    0|
 +-----------------+---------+-----+--------+-------+-----+
-|Utilization (%)  |        1|    2|       1|      3|    0|
+|Utilization (%)  |        5|  100|      14|     34|    0|
 +-----------------+---------+-----+--------+-------+-----+
 
 + Detail: 
     * Instance: 
-    +-------------------------------------------------------+---------------------------------------------+---------+----+------+------+-----+
-    |                        Instance                       |                    Module                   | BRAM_18K| DSP|  FF  |  LUT | URAM|
-    +-------------------------------------------------------+---------------------------------------------+---------+----+------+------+-----+
-    |grp_dft_Pipeline_VITIS_LOOP_23_3_fu_48                 |dft_Pipeline_VITIS_LOOP_23_3                 |        0|   0|    25|    62|    0|
-    |grp_dft_Pipeline_VITIS_LOOP_6_1_VITIS_LOOP_10_2_fu_32  |dft_Pipeline_VITIS_LOOP_6_1_VITIS_LOOP_10_2  |        4|   5|  1216|  1370|    0|
-    +-------------------------------------------------------+---------------------------------------------+---------+----+------+------+-----+
-    |Total                                                  |                                             |        4|   5|  1241|  1432|    0|
-    +-------------------------------------------------------+---------------------------------------------+---------+----+------+------+-----+
+    +-----------------------------------------+------------------------------------+---------+----+------+------+-----+
+    |                 Instance                |               Module               | BRAM_18K| DSP|  FF  |  LUT | URAM|
+    +-----------------------------------------+------------------------------------+---------+----+------+------+-----+
+    |dadd_64ns_64ns_64_7_full_dsp_1_U75       |dadd_64ns_64ns_64_7_full_dsp_1      |        0|   3|   630|  1141|    0|
+    |dadddsub_64ns_64ns_64_7_full_dsp_1_U74   |dadddsub_64ns_64ns_64_7_full_dsp_1  |        0|   3|   630|  1141|    0|
+    |grp_dft_Pipeline_VITIS_LOOP_26_4_fu_152  |dft_Pipeline_VITIS_LOOP_26_4        |        0|   0|    25|    62|    0|
+    |grp_dft_Pipeline_VITIS_LOOP_8_1_fu_144   |dft_Pipeline_VITIS_LOOP_8_1         |        0|   0|    13|    51|    0|
+    |dmul_64ns_64ns_64_7_max_dsp_1_U76        |dmul_64ns_64ns_64_7_max_dsp_1       |        0|  11|   342|   586|    0|
+    |dmul_64ns_64ns_64_7_max_dsp_1_U77        |dmul_64ns_64ns_64_7_max_dsp_1       |        0|  11|   342|   586|    0|
+    |dmul_64ns_64ns_64_7_max_dsp_1_U78        |dmul_64ns_64ns_64_7_max_dsp_1       |        0|  11|   342|   586|    0|
+    |dmul_64ns_64ns_64_7_max_dsp_1_U79        |dmul_64ns_64ns_64_7_max_dsp_1       |        0|  11|   342|   586|    0|
+    |fpext_32ns_64_2_no_dsp_1_U72             |fpext_32ns_64_2_no_dsp_1            |        0|   0|     0|     0|    0|
+    |fpext_32ns_64_2_no_dsp_1_U73             |fpext_32ns_64_2_no_dsp_1            |        0|   0|     0|     0|    0|
+    |fptrunc_64ns_32_2_no_dsp_1_U70           |fptrunc_64ns_32_2_no_dsp_1          |        0|   0|     0|     0|    0|
+    |fptrunc_64ns_32_2_no_dsp_1_U71           |fptrunc_64ns_32_2_no_dsp_1          |        0|   0|     0|     0|    0|
+    |grp_sin_or_cos_double_s_fu_164           |sin_or_cos_double_s                 |        8|  85|  5562|  6364|    0|
+    |grp_sin_or_cos_double_s_fu_183           |sin_or_cos_double_s                 |        8|  85|  5562|  6364|    0|
+    |sitodp_32ns_64_6_no_dsp_1_U80            |sitodp_32ns_64_6_no_dsp_1           |        0|   0|     0|     0|    0|
+    +-----------------------------------------+------------------------------------+---------+----+------+------+-----+
+    |Total                                    |                                    |       16| 220| 13790| 17467|    0|
+    +-----------------------------------------+------------------------------------+---------+----+------+------+-----+
 
     * DSP: 
     N/A
@@ -252,39 +422,97 @@ cp -f dft.comp/hls/syn/report/dft_csynth.rpt /home/linux/ieng6/students/519/gam0
     N/A
 
     * Expression: 
-    N/A
+    +----------------------------------+----------+----+---+----+------------+------------+
+    |           Variable Name          | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +----------------------------------+----------+----+---+----+------------+------------+
+    |add_ln14_fu_278_p2                |         +|   0|  0|  12|          11|           1|
+    |add_ln15_fu_312_p2                |         +|   0|  0|  12|          11|           1|
+    |icmp_ln14_fu_272_p2               |      icmp|   0|  0|  12|          11|          12|
+    |icmp_ln15_fu_306_p2               |      icmp|   0|  0|  12|          11|          12|
+    |ap_block_state37_on_subcall_done  |        or|   0|  0|   2|           1|           1|
+    |imag_op_we0                       |        or|   0|  0|   2|           1|           1|
+    |real_op_we0                       |        or|   0|  0|   2|           1|           1|
+    |xor_ln19_fu_343_p2                |       xor|   0|  0|   2|           1|           2|
+    +----------------------------------+----------+----+---+----+------------+------------+
+    |Total                             |          |   0|  0|  56|          48|          31|
+    +----------------------------------+----------+----+---+----+------------+------------+
 
     * Multiplexer: 
-    +----------------------+----+-----------+-----+-----------+
-    |         Name         | LUT| Input Size| Bits| Total Bits|
-    +----------------------+----+-----------+-----+-----------+
-    |ap_NS_fsm             |  25|          5|    1|          5|
-    |imag_op_address0      |  14|          3|   10|         30|
-    |imag_op_ce0           |  14|          3|    1|          3|
-    |imag_op_we0           |   9|          2|    1|          2|
-    |imag_sample_address0  |  14|          3|   10|         30|
-    |imag_sample_ce0       |  14|          3|    1|          3|
-    |imag_sample_we0       |   9|          2|    1|          2|
-    |real_op_address0      |  14|          3|   10|         30|
-    |real_op_ce0           |  14|          3|    1|          3|
-    |real_op_we0           |   9|          2|    1|          2|
-    |real_sample_address0  |  14|          3|   10|         30|
-    |real_sample_ce0       |  14|          3|    1|          3|
-    |real_sample_we0       |   9|          2|    1|          2|
-    +----------------------+----+-----------+-----+-----------+
-    |Total                 | 173|         37|   49|        145|
-    +----------------------+----+-----------+-----+-----------+
+    +------------------------+-----+-----------+-----+-----------+
+    |          Name          | LUT | Input Size| Bits| Total Bits|
+    +------------------------+-----+-----------+-----+-----------+
+    |ap_NS_fsm               |  269|         63|    1|         63|
+    |grp_fu_208_p0           |   14|          3|   32|         96|
+    |grp_fu_211_p0           |   14|          3|   32|         96|
+    |grp_fu_214_opcode       |   14|          3|    2|          6|
+    |grp_fu_214_p0           |   14|          3|   64|        192|
+    |grp_fu_214_p1           |   14|          3|   64|        192|
+    |grp_fu_218_p0           |   14|          3|   64|        192|
+    |grp_fu_218_p1           |   14|          3|   64|        192|
+    |grp_fu_222_p0           |   25|          5|   64|        320|
+    |grp_fu_222_p1           |   25|          5|   64|        320|
+    |grp_fu_240_p0           |   14|          3|   32|         96|
+    |imag_op_address0        |   14|          3|   10|         30|
+    |imag_op_address0_local  |   14|          3|   10|         30|
+    |imag_op_ce0             |   14|          3|    1|          3|
+    |imag_op_d0              |    9|          2|   32|         64|
+    |imag_op_we0             |    9|          2|    1|          2|
+    |imag_sample_address0    |    9|          2|   10|         20|
+    |imag_sample_ce0         |    9|          2|    1|          2|
+    |imag_sample_we0         |    9|          2|    1|          2|
+    |k_reg_132               |    9|          2|   11|         22|
+    |n_fu_76                 |    9|          2|   11|         22|
+    |real_op_address0        |   14|          3|   10|         30|
+    |real_op_address0_local  |   14|          3|   10|         30|
+    |real_op_ce0             |   14|          3|    1|          3|
+    |real_op_d0              |    9|          2|   32|         64|
+    |real_op_we0             |    9|          2|    1|          2|
+    |real_sample_address0    |    9|          2|   10|         20|
+    |real_sample_ce0         |    9|          2|    1|          2|
+    |real_sample_we0         |    9|          2|    1|          2|
+    +------------------------+-----+-----------+-----+-----------+
+    |Total                   |  623|        139|  637|       2115|
+    +------------------------+-----+-----------+-----+-----------+
 
     * Register: 
-    +--------------------------------------------------------------------+---+----+-----+-----------+
-    |                                Name                                | FF| LUT| Bits| Const Bits|
-    +--------------------------------------------------------------------+---+----+-----+-----------+
-    |ap_CS_fsm                                                           |  4|   0|    4|          0|
-    |grp_dft_Pipeline_VITIS_LOOP_23_3_fu_48_ap_start_reg                 |  1|   0|    1|          0|
-    |grp_dft_Pipeline_VITIS_LOOP_6_1_VITIS_LOOP_10_2_fu_32_ap_start_reg  |  1|   0|    1|          0|
-    +--------------------------------------------------------------------+---+----+-----+-----------+
-    |Total                                                               |  6|   0|    6|          0|
-    +--------------------------------------------------------------------+---+----+-----+-----------+
+    +------------------------------------------------------+----+----+-----+-----------+
+    |                         Name                         | FF | LUT| Bits| Const Bits|
+    +------------------------------------------------------+----+----+-----+-----------+
+    |add_ln14_reg_400                                      |  11|   0|   11|          0|
+    |add_ln15_reg_460                                      |  11|   0|   11|          0|
+    |ap_CS_fsm                                             |  62|   0|   62|          0|
+    |c_reg_475                                             |  64|   0|   64|          0|
+    |conv1_reg_440                                         |  64|   0|   64|          0|
+    |conv2_reg_445                                         |  64|   0|   64|          0|
+    |conv3_reg_451                                         |  64|   0|   64|          0|
+    |conv4_reg_542                                         |  64|   0|   64|          0|
+    |conv5_reg_552                                         |  32|   0|   32|          0|
+    |conv6_reg_547                                         |  64|   0|   64|          0|
+    |conv7_reg_557                                         |  32|   0|   32|          0|
+    |conv_reg_470                                          |  64|   0|   64|          0|
+    |grp_dft_Pipeline_VITIS_LOOP_26_4_fu_152_ap_start_reg  |   1|   0|    1|          0|
+    |grp_dft_Pipeline_VITIS_LOOP_8_1_fu_144_ap_start_reg   |   1|   0|    1|          0|
+    |grp_sin_or_cos_double_s_fu_164_ap_start_reg           |   1|   0|    1|          0|
+    |grp_sin_or_cos_double_s_fu_183_ap_start_reg           |   1|   0|    1|          0|
+    |imag_op_addr_reg_517                                  |  10|   0|   10|          0|
+    |imag_op_load_reg_527                                  |  32|   0|   32|          0|
+    |imag_sample_load_reg_425                              |  32|   0|   32|          0|
+    |k_reg_132                                             |  11|   0|   11|          0|
+    |mul3_reg_497                                          |  64|   0|   64|          0|
+    |mul4_reg_502                                          |  64|   0|   64|          0|
+    |mul5_reg_507                                          |  64|   0|   64|          0|
+    |n_fu_76                                               |  11|   0|   11|          0|
+    |real_op_addr_reg_512                                  |  10|   0|   10|          0|
+    |real_op_load_reg_522                                  |  32|   0|   32|          0|
+    |real_sample_load_reg_420                              |  32|   0|   32|          0|
+    |reg_243                                               |  64|   0|   64|          0|
+    |reg_252                                               |  64|   0|   64|          0|
+    |reg_258                                               |  64|   0|   64|          0|
+    |trunc_ln19_reg_486                                    |  63|   0|   63|          0|
+    |xor_ln19_reg_481                                      |   1|   0|    1|          0|
+    +------------------------------------------------------+----+----+-----+-----------+
+    |Total                                                 |1218|   0| 1218|          0|
+    +------------------------------------------------------+----+----+-----+-----------+
 
 
 
