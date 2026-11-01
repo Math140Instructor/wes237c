@@ -73,6 +73,7 @@ hls: $(HLS_STAMP)
 
 report: hls
 	cp -f $(HLS_COMPONENT)/hls/syn/report/$(TOP)_csynth.rpt $(CURDIR)
+	@cat $(TOP)_csynth.rpt
 
 # One IP export path for both manual imports and the Vivado board build.
 ip: hls
@@ -80,6 +81,7 @@ ip: hls
 	  'export_design -format ip_catalog -rtl verilog -vendor xilinx.com -library hls -version 1.0 -ipname $(TOP)' \
 	  'exit' > $(HLS_EXPORT)
 	$(RUN_CHECKED) "$(HLS_IP_XML)" "HLS IP export" $(HLS_COMPILER) $(HLS_EXPORT)
+	@cat $(HLS_EXPORT)
 
 board-ip: ip
 

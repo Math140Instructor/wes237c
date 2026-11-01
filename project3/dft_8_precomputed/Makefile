@@ -44,6 +44,7 @@ include $(dir $(GEN_TCL))boards.mk
 	./$< > $@ 2>&1 || { s=$$?; echo "./$< > $@ failed $$s" >&2; exit $$s; }
 
 test: $(EXAMPLES_LOG)
+	@cat $(EXAMPLES_LOG)
 
 .PHONY: clean hls test report ip
 
