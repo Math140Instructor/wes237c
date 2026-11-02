@@ -23,15 +23,30 @@ int main() {
     return 1;
   }
 
-  hls::stream<DTYPE> real_in("real_in");
-  hls::stream<DTYPE> imag_in("imag_in");
-  hls::stream<DTYPE> real_out("real_out");
-  hls::stream<DTYPE> imag_out("imag_out");
+  hls::stream<transPkt> real_in("real_in");
+  hls::stream<transPkt> imag_in("imag_in");
+  hls::stream<transPkt> real_out("real_out");
+  hls::stream<transPkt> imag_out("imag_out");
 
   // Prepare 1024 complex input samples
   for (int n = 0; n < SIZE; n++) {
-    real_in.write(static_cast<DTYPE>(n));
-    imag_in.write(static_cast<DTYPE>(0));
+    transPkt real_pkt;
+    transPkt imag_pkt;
+
+    real_pkt.data = static_cast<DTYPE>(n);
+    imag_pkt.data = static_cast<DTYPE>(0);
+
+    real_pkt.keep = 0xF;
+    imag_pkt.keep = 0xF;
+
+    real_pkt.strb = 0xF;
+    imag_pkt.strb = 0xF;
+
+    real_pkt.last = (n == SIZE - 1);
+    imag_pkt.last = (n == SIZE - 1);
+
+    real_in.write(real_pkt);
+    imag_in.write(imag_pkt);
   }
 
   // Execute streaming DFT
@@ -47,8 +62,20 @@ int main() {
       return 1;
     }
 
-    DTYPE result_R = real_out.read();
-    DTYPE result_I = imag_out.read();
+    transPkt real_pkt = real_out.read();
+    transPkt imag_pkt = imag_out.read();
+
+    DTYPE result_R = real_pkt.data;
+    DTYPE result_I = imag_pkt.data;
+
+    // Verify TLAST is asserted only on the final sample
+    bool expected_last = (k == SIZE - 1);
+
+    if (static_cast<bool>(real_pkt.last) != expected_last || static_cast<bool>(imag_pkt.last) != expected_last) {
+      printf("FAIL: Incorrect TLAST at k=%d\n", k);
+      fclose(fp);
+      return 1;
+    }
 
     int index;
     float gold_R, gold_I;
@@ -66,7 +93,6 @@ int main() {
     }
 
     rmse_R.add_value(static_cast<double>(result_R) - gold_R);
-
     rmse_I.add_value(static_cast<double>(result_I) - gold_I);
   }
 
