@@ -23,13 +23,12 @@ make test
 make hls
 make report
 
-## Test outputs
-diff -wB <(cat out.dat; echo) <(cat out.gold.dat; echo)
-
 ## Weekly Assignments
 
 | Lab Reports | Assignments|
 |------|-------------|
-| [Lab #1](./project-1/) | [Assignment #1](./project-1/) |
+| [Assignment #1](./project1/) |
+| [Assignment #2](./project2/) |
+| [Assignment #3](./project3/) |
 
 Additional weeks will be added as the course progresses.
