@@ -30,5 +30,6 @@ make report
 | [Assignment #1](./project1/) |
 | [Assignment #2](./project2/) |
 | [Assignment #3](./project3/) |
+| [Assignment #4](./project4/) |
 
 Additional weeks will be added as the course progresses.
