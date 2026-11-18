@@ -12,6 +12,7 @@ OUTPUT:
 #include <stdlib.h>
 #include <math.h>
 #include "fft.h"
+#include "bit_reverse.h"
 
 void fft(DTYPE X_R[SIZE], DTYPE X_I[SIZE])
 {
@@ -31,7 +32,7 @@ void fft(DTYPE X_R[SIZE], DTYPE X_I[SIZE])
 	int N2 = SIZE2;	/* N2=N>>1 */
 
 	/*=====================BEGIN BIT REBERSAL===========================*/
-	// write your code here
+	bit_reverse(X_R,X_I);
 
 	/*++++++++++++++++++++++END OF BIT REVERSAL++++++++++++++++++++++++++*/
 
@@ -53,8 +54,13 @@ void fft(DTYPE X_R[SIZE], DTYPE X_I[SIZE])
 		butterfly:for(j=0; j<numBF; j++)
 		{
 
-			c = cos(a);
-			s = sin(a);
+			// c = cos(a);
+			// s = sin(a);
+			// Map the current stage's twiddle factor to the 1024-point table.
+            int index = j * (SIZE / DFTpts);
+			DTYPE c = W_real[index];
+			DTYPE s = W_imag[index];
+			
 			a = a + e;
 
 			// Compute butterflies that use same W**k
