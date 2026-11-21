@@ -25,11 +25,11 @@ make report
 
 ## Weekly Assignments
 
-| Lab Reports | Assignments|
-|------|-------------|
-| [Assignment #1](./project1/) |
-| [Assignment #2](./project2/) |
-| [Assignment #3](./project3/) |
-| [Assignment #4](./project4/) |
+|Assignments|
+|-------------|
+| [Project 1](./project1/) |
+| [Project 2](./project2/) |
+| [Project 3](./project3/) |
+| [Project 4](./project4/) |
 
 Additional weeks will be added as the course progresses.
