@@ -18,15 +18,15 @@ void fft(DTYPE X_R[SIZE], DTYPE X_I[SIZE], DTYPE OUT_R[SIZE], DTYPE OUT_I[SIZE])
 // create an AXI4 memory-mapped master interface so your FFT hardware can write to external DDR memory.
 #pragma HLS INTERFACE mode = m_axi port = X_R offset = slave bundle = xreal_in
 #pragma HLS INTERFACE mode = m_axi port = X_I offset = slave bundle = ximag_in
-#pragma HLS INTERFACE mode = m_axi port = OUT_R offset = slave bundle = xreal_out  
-#pragma HLS INTERFACE mode = m_axi port = OUT_I offset = slave bundle = ximag_out  
+#pragma HLS INTERFACE mode = m_axi port = OUT_R offset = slave bundle = xreal_out
+#pragma HLS INTERFACE mode = m_axi port = OUT_I offset = slave bundle = ximag_out
 
 // AXI4-Lite control interface so the PYNQ processor can start your FFT and check when it finishes.
-#pragma HLS INTERFACE mode=s_axilite port=X_R bundle=control
-#pragma HLS INTERFACE mode=s_axilite port=X_I bundle=control
-#pragma HLS INTERFACE mode=s_axilite port=OUT_R bundle=control
-#pragma HLS INTERFACE mode=s_axilite port=OUT_I bundle=control
-#pragma HLS INTERFACE mode=s_axilite port=return bundle=control
+#pragma HLS INTERFACE mode = s_axilite port = X_R bundle = control
+#pragma HLS INTERFACE mode = s_axilite port = X_I bundle = control
+#pragma HLS INTERFACE mode = s_axilite port = OUT_R bundle = control
+#pragma HLS INTERFACE mode = s_axilite port = OUT_I bundle = control
+#pragma HLS INTERFACE mode = s_axilite port = return bundle = control
 
   // Combine input reordering and first butterfly stage into one task.
   // Only this task accesses X_R/X_I, which are modified in-place.
@@ -70,8 +70,8 @@ void bit_reverse(DTYPE X_R[SIZE], DTYPE X_I[SIZE]) {
 #pragma HLS DEPENDENCE variable = X_R dependent = false
 #pragma HLS DEPENDENCE variable = X_I dependent = false
 
-    INTTYPE rev_a = 0;
-    INTTYPE rev_b = 0;
+    int rev_a = 0;
+    int rev_b = 0;
 
     for (int j = 0; j < HALF_BITS; j++) {
 #pragma HLS UNROLL
