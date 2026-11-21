@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'fft'
 ================================================================
-* Date:           Thu Nov 19 22:29:44 2026
+* Date:           Fri Nov 20 15:39:17 2026
 
 * Version:        2024.2 (Build 5238294 on Nov  8 2024)
 * Project:        fft.comp
@@ -66,12 +66,12 @@
 |DSP              |        -|    -|       -|      -|    -|
 |Expression       |        -|    -|       0|     52|    -|
 |FIFO             |        -|    -|     198|    134|    -|
-|Instance         |       28|  189|   27661|  38076|    -|
+|Instance         |       28|  189|   27631|  38036|    -|
 |Memory           |       72|    -|       0|      0|    0|
 |Multiplexer      |        -|    -|       0|     99|    -|
 |Register         |        -|    -|      11|      -|    -|
 +-----------------+---------+-----+--------+-------+-----+
-|Total            |      100|  189|   27870|  38361|    0|
+|Total            |      100|  189|   27840|  38321|    0|
 +-----------------+---------+-----+--------+-------+-----+
 |Available        |      280|  220|  106400|  53200|    0|
 +-----------------+---------+-----+--------+-------+-----+
@@ -83,8 +83,7 @@
     +--------------------+-----------------+---------+----+------+------+-----+
     |      Instance      |      Module     | BRAM_18K| DSP|  FF  |  LUT | URAM|
     +--------------------+-----------------+---------+----+------+------+-----+
-    |control_r_s_axi_U   |control_r_s_axi  |        0|   0|   310|   552|    0|
-    |control_s_axi_U     |control_s_axi    |        0|   0|    36|    40|    0|
+    |control_s_axi_U     |control_s_axi    |        0|   0|   316|   552|    0|
     |entry_proc_U0       |entry_proc       |        0|   0|     2|    29|    0|
     |fft_stage_first_U0  |fft_stage_first  |        0|   4|  2073|  2731|    0|
     |fft_stage_last_U0   |fft_stage_last   |        2|   9|  2597|  3440|    0|
@@ -101,7 +100,7 @@
     |xreal_in_m_axi_U    |xreal_in_m_axi   |        4|   0|   824|   723|    0|
     |xreal_out_m_axi_U   |xreal_out_m_axi  |        2|   0|   665|   646|    0|
     +--------------------+-----------------+---------+----+------+------+-----+
-    |Total               |                 |       28| 189| 27661| 38076|    0|
+    |Total               |                 |       28| 189| 27631| 38036|    0|
     +--------------------+-----------------+---------+----+------+------+-----+
 
     * DSP: 
@@ -224,40 +223,23 @@
 +--------------------------+-----+-----+------------+--------------+--------------+
 |         RTL Ports        | Dir | Bits|  Protocol  | Source Object|    C Type    |
 +--------------------------+-----+-----+------------+--------------+--------------+
-|s_axi_control_AWVALID     |   in|    1|       s_axi|       control|   return void|
-|s_axi_control_AWREADY     |  out|    1|       s_axi|       control|   return void|
-|s_axi_control_AWADDR      |   in|    4|       s_axi|       control|   return void|
-|s_axi_control_WVALID      |   in|    1|       s_axi|       control|   return void|
-|s_axi_control_WREADY      |  out|    1|       s_axi|       control|   return void|
-|s_axi_control_WDATA       |   in|   32|       s_axi|       control|   return void|
-|s_axi_control_WSTRB       |   in|    4|       s_axi|       control|   return void|
-|s_axi_control_ARVALID     |   in|    1|       s_axi|       control|   return void|
-|s_axi_control_ARREADY     |  out|    1|       s_axi|       control|   return void|
-|s_axi_control_ARADDR      |   in|    4|       s_axi|       control|   return void|
-|s_axi_control_RVALID      |  out|    1|       s_axi|       control|   return void|
-|s_axi_control_RREADY      |   in|    1|       s_axi|       control|   return void|
-|s_axi_control_RDATA       |  out|   32|       s_axi|       control|   return void|
-|s_axi_control_RRESP       |  out|    2|       s_axi|       control|   return void|
-|s_axi_control_BVALID      |  out|    1|       s_axi|       control|   return void|
-|s_axi_control_BREADY      |   in|    1|       s_axi|       control|   return void|
-|s_axi_control_BRESP       |  out|    2|       s_axi|       control|   return void|
-|s_axi_control_r_AWVALID   |   in|    1|       s_axi|     control_r|        scalar|
-|s_axi_control_r_AWREADY   |  out|    1|       s_axi|     control_r|        scalar|
-|s_axi_control_r_AWADDR    |   in|    6|       s_axi|     control_r|        scalar|
-|s_axi_control_r_WVALID    |   in|    1|       s_axi|     control_r|        scalar|
-|s_axi_control_r_WREADY    |  out|    1|       s_axi|     control_r|        scalar|
-|s_axi_control_r_WDATA     |   in|   32|       s_axi|     control_r|        scalar|
-|s_axi_control_r_WSTRB     |   in|    4|       s_axi|     control_r|        scalar|
-|s_axi_control_r_ARVALID   |   in|    1|       s_axi|     control_r|        scalar|
-|s_axi_control_r_ARREADY   |  out|    1|       s_axi|     control_r|        scalar|
-|s_axi_control_r_ARADDR    |   in|    6|       s_axi|     control_r|        scalar|
-|s_axi_control_r_RVALID    |  out|    1|       s_axi|     control_r|        scalar|
-|s_axi_control_r_RREADY    |   in|    1|       s_axi|     control_r|        scalar|
-|s_axi_control_r_RDATA     |  out|   32|       s_axi|     control_r|        scalar|
-|s_axi_control_r_RRESP     |  out|    2|       s_axi|     control_r|        scalar|
-|s_axi_control_r_BVALID    |  out|    1|       s_axi|     control_r|        scalar|
-|s_axi_control_r_BREADY    |   in|    1|       s_axi|     control_r|        scalar|
-|s_axi_control_r_BRESP     |  out|    2|       s_axi|     control_r|        scalar|
+|s_axi_control_AWVALID     |   in|    1|       s_axi|       control|        scalar|
+|s_axi_control_AWREADY     |  out|    1|       s_axi|       control|        scalar|
+|s_axi_control_AWADDR      |   in|    6|       s_axi|       control|        scalar|
+|s_axi_control_WVALID      |   in|    1|       s_axi|       control|        scalar|
+|s_axi_control_WREADY      |  out|    1|       s_axi|       control|        scalar|
+|s_axi_control_WDATA       |   in|   32|       s_axi|       control|        scalar|
+|s_axi_control_WSTRB       |   in|    4|       s_axi|       control|        scalar|
+|s_axi_control_ARVALID     |   in|    1|       s_axi|       control|        scalar|
+|s_axi_control_ARREADY     |  out|    1|       s_axi|       control|        scalar|
+|s_axi_control_ARADDR      |   in|    6|       s_axi|       control|        scalar|
+|s_axi_control_RVALID      |  out|    1|       s_axi|       control|        scalar|
+|s_axi_control_RREADY      |   in|    1|       s_axi|       control|        scalar|
+|s_axi_control_RDATA       |  out|   32|       s_axi|       control|        scalar|
+|s_axi_control_RRESP       |  out|    2|       s_axi|       control|        scalar|
+|s_axi_control_BVALID      |  out|    1|       s_axi|       control|        scalar|
+|s_axi_control_BREADY      |   in|    1|       s_axi|       control|        scalar|
+|s_axi_control_BRESP       |  out|    2|       s_axi|       control|        scalar|
 |ap_clk                    |   in|    1|  ap_ctrl_hs|           fft|  return value|
 |ap_rst_n                  |   in|    1|  ap_ctrl_hs|           fft|  return value|
 |interrupt                 |  out|    1|  ap_ctrl_hs|           fft|  return value|

@@ -21,12 +21,12 @@ void fft(DTYPE X_R[SIZE], DTYPE X_I[SIZE], DTYPE OUT_R[SIZE], DTYPE OUT_I[SIZE])
 #pragma HLS INTERFACE mode = m_axi port = OUT_R offset = slave bundle = xreal_out  
 #pragma HLS INTERFACE mode = m_axi port = OUT_I offset = slave bundle = ximag_out  
 
-// #pragma HLS INTERFACE mode = s_axilite port = X_R bundle = control
-// #pragma HLS INTERFACE mode = s_axilite port = X_I bundle = control
-// #pragma HLS INTERFACE mode = s_axilite port = OUT_R bundle = control
-// #pragma HLS INTERFACE mode = s_axilite port = OUT_I bundle = control
 // AXI4-Lite control interface so the PYNQ processor can start your FFT and check when it finishes.
-#pragma HLS INTERFACE mode = s_axilite port = return bundle = control
+#pragma HLS INTERFACE mode=s_axilite port=X_R bundle=control
+#pragma HLS INTERFACE mode=s_axilite port=X_I bundle=control
+#pragma HLS INTERFACE mode=s_axilite port=OUT_R bundle=control
+#pragma HLS INTERFACE mode=s_axilite port=OUT_I bundle=control
+#pragma HLS INTERFACE mode=s_axilite port=return bundle=control
 
   // Combine input reordering and first butterfly stage into one task.
   // Only this task accesses X_R/X_I, which are modified in-place.
