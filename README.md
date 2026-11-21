@@ -27,9 +27,9 @@ make report
 
 |Assignments|
 |-------------|
-| [Project 1](./project1/) |
-| [Project 2](./project2/) |
-| [Project 3](./project3/) |
-| [Project 4](./project4/) |
+| [Project 1: FIR](./project1/) |
+| [Project 2: CORDIC](./project2/) |
+| [Project 3: DFT](./project3/) |
+| [Project 4: FFT](./project4/) |
 
 Additional weeks will be added as the course progresses.
